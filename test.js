@@ -1,6 +1,6 @@
 'use strict';
 
-const is64 = require('./is64.js');
+const is64 = require('./is64bit.js');
 
 is64("./sample/wget64", "linux").then((res) => { console.log(`linux64: ${res}`) }).catch((err) => { console.error(`linux64: ${err}`) }); //x64
 
