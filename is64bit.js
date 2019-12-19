@@ -2,7 +2,6 @@
 
 const os = require('os');
 const fs = require('fs');
-const path = require('path');
 
 const format = {
   win32: // cf: https://docs.microsoft.com/en-us/windows/win32/debug/pe-format
