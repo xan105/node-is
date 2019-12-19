@@ -20,7 +20,7 @@ is64bit("hello_world.exe").then((is64) => {
 
 ```
 
-Checking binary from another platform
+Check binary from another platform
 =====================================
 ```js 
 //Linux binary with Node running on Windows
