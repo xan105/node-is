@@ -1,5 +1,10 @@
 Check if a binary is 32 (x86) or 64-bit (x86_64).<br />
 
+📖 cf:
+- https://docs.microsoft.com/en-us/windows/win32/debug/pe-format
+- https://docs.microsoft.com/en-us/windows/win32/debug/pe-format#machine-types
+- https://en.wikipedia.org/wiki/Executable_and_Linkable_Format#File_header
+
 Example
 =======
 ```js 
