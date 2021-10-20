@@ -1,6 +1,6 @@
 {
   "name": "@xan105/is",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Collection of various 'is ... ?' checks",
   "type": "module",
   "exports": {
@@ -12,7 +12,7 @@
   },
   "types": "./types/esm.d.ts",
   "engines": {
-    "node": ">=0.14"
+    "node": "^14.17.0 || >=16.0.0"
   },
   "directories": {
     "lib": "lib",
