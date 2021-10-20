@@ -1,29 +1,30 @@
 {
-  "name": "is64bit",
-  "version": "1.0.2",
-  "description": "Check if a binary is 32 (x86) or 64-bit (x86_64).",
+  "name": "@xan105/is",
+  "version": "2.0.0",
+  "description": "Collection of various 'is ... ?' checks",
   "type": "module",
-  "main": "./lib/is64bit.cjs",
   "exports": {
-    "import": "./lib/esm.mjs",
-    "require": "./lib/is64bit.cjs"
+    ".": "./lib/esm.js",
+    "./type": "./lib/type.js",
+    "./bin": "./lib/is/file/binary.js",
+    "./img": "./lib/is/file/image.js",
+    "./win": "./lib/is/os/windows.js"
   },
+  "types": "./types/esm.d.ts",
   "engines": {
-    "node": ">=0.12"
+    "node": ">=0.14"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test --no-coverage"
   },
   "scripts": {
-    "lint": "npx eslint --ignore-path .gitignore ./**/*.{cjs,mjs}"
+    "lint": "npx eslint --ignore-path .gitignore ./**/*.{js,mjs}",
+    "test": "tap"
   },
   "keywords": [
-    "executable",
-    "binary",
-    "32-bit",
-    "64-bit",
-    "x86",
-    "x64",
-    "x86_64",
-    "windows",
-    "linux"
+    "is",
+    "check"
   ],
   "author": {
     "name": "Anthony Beaumont",
@@ -33,13 +34,14 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xan105/node-is64bit.git"
+    "url": "git+https://github.com/xan105/node-is.git"
   },
   "bugs": {
-    "url": "https://github.com/xan105/node-is64bit/issues"
+    "url": "https://github.com/xan105/node-is/issues"
   },
-  "homepage": "https://github.com/xan105/node-is64bit#readme",
+  "homepage": "https://github.com/xan105/node-is#readme",
   "devDependencies": {
-    "eslint": "^7.6.0"
+    "eslint": "^8.0.1",
+    "tap": "^15.0.10"
   }
 }
