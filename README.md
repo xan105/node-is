@@ -79,7 +79,9 @@ Check binary from another platform
 ```js 
 import { is64bit } from "@xan105/is/bin";
 //Linux binary with Node running on Windows
-const is64 = await is64bit("hello_world","linux") //same values as os.platform()
+const is64 = await is64bit("hello_world","linux"); //same values as os.platform()
+//windows binary with Node running on Linux
+const is64 = await is64bit("hello_world.exe","win32");
 ```
 
 #### `is32bit (filePath: string, platform?: string): bool`
