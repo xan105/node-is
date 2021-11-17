@@ -23,6 +23,7 @@ export function isIntegerPositiveOrZero(i: number, safe?: bool): bool;
 export function isIntegerWithinRange(i: number, min: number, max: number, safe?: bool): bool;
 
 export function isObj(value: any): bool;
+export function isObjEmpty(value: any): bool;
 
 export function isString(value: any): bool;
 export function isStringNotEmpty(value: string): bool;
