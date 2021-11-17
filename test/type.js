@@ -101,10 +101,10 @@ t.notOk(type.isObj(new String()), "is plain obj");
 t.notOk(type.isObj(new Date()), "is plain obj");
 t.notOk(type.isObj(/.+/g), "is plain obj");
 t.notOk(type.isObj([]), "is plain obj");
-t.ok(type.isObjEmpty({}), "plain empty obj");
-t.ok(type.isObjEmpty(new Object()), "plain empty obj");
-t.ok(type.isObjEmpty(Object.create(null)), "plain empty obj");
-t.notOk(type.isObjEmpty({foo: "bar"}), "plain empty obj");
+t.notOk(type.isObjNotEmpty({}), "plain empty obj");
+t.notOk(type.isObjNotEmpty(new Object()), "plain empty obj");
+t.notOk(type.isObjNotEmpty(Object.create(null)), "plain empty obj");
+t.ok(type.isObjNotEmpty({foo: "bar"}), "plain empty obj");
 
 t.end();
 });

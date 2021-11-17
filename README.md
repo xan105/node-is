@@ -117,7 +117,7 @@ Same as above but for a 32-bit (x86) binary.
 #### `isIntegerPositiveOrZero(i: number, safe?: bool): bool`
 #### `isIntegerWithinRange(i: number, min: number, max: number, safe?: bool): bool`
 #### `isObj(value: any): bool`
-#### `isObjEmpty(value: any): bool`
+#### `isObjNotEmpty(value: any): bool`
 
 as in a "plain obj" and not a JS obj so {}, new Object() and Object.create(null).
 
