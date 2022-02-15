@@ -1,18 +1,15 @@
 {
   "name": "@xan105/is",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Collection of various 'is ... ?' checks",
   "type": "module",
   "exports": {
-    ".": "./lib/esm.js",
-    "./type": "./lib/type.js",
-    "./bin": "./lib/is/file/binary.js",
-    "./img": "./lib/is/file/image.js",
-    "./win": "./lib/is/os/windows.js"
+    ".": "./lib/index.js",
+    "./assert": "./lib/assert.js"
   },
-  "types": "./types/esm.d.ts",
+  "types": "./types/index.d.ts",
   "engines": {
-    "node": "^14.17.0 || >=16.0.0"
+    "node": ">=16.0.0"
   },
   "directories": {
     "lib": "lib",
@@ -24,7 +21,9 @@
   },
   "keywords": [
     "is",
-    "check"
+    "should",
+    "check",
+    "assert"
   ],
   "author": {
     "name": "Anthony Beaumont",
@@ -41,7 +40,10 @@
   },
   "homepage": "https://github.com/xan105/node-is#readme",
   "devDependencies": {
-    "eslint": "^8.0.1",
-    "tap": "^15.0.10"
+    "eslint": "^8.9.0",
+    "tap": "^15.1.6"
+  },
+  "dependencies": {
+    "@xan105/error": "^1.1.0"
   }
 }
