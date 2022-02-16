@@ -1,5 +1,6 @@
 import t from 'tap';
 import * as check from "../lib/index.js";
+import { assert } from "../lib/index.js";
 
 if (check.isWindows())
 {
@@ -19,6 +20,20 @@ if (check.isWindows())
     t.ok(check.isWin10(), "winver");
     t.notOk(check.isWin8(), "winver");
     t.notOk(check.isWin7(), "winver");
+    
+    //assert
+    t.throws(function(){ assert.shouldWin11orGreater() }, "winver");
+    t.doesNotThrow(function(){ assert.shouldWin10orGreater() }, "winver");
+    t.doesNotThrow(function(){ assert.shouldWin8orGreater() }, "winver");
+    t.doesNotThrow(function(){ assert.shouldWin7orGreater() }, "winver");
+    t.doesNotThrow(function(){ assert.shouldWin11orLesser() }, "winver");
+    t.doesNotThrow(function(){ assert.shouldWin10orLesser() }, "winver");
+    t.throws(function(){ assert.shouldWin8orLesser() }, "winver");
+    t.throws(function(){ assert.shouldWin7orLesser() }, "winver");
+    t.throws(function(){ assert.shouldWin11() }, "winver");
+    t.doesNotThrow(function(){ assert.shouldWin10() }, "winver");
+    t.throws(function(){ assert.shouldWin8() }, "winver");
+    t.throws(function(){ assert.shouldWin7() }, "winver");
     
     t.end();
     });
