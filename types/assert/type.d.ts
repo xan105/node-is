@@ -9,6 +9,7 @@ export function shouldArrayOfIntegerPositiveOrZero(value: number[], safe?: boole
 export function shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number,safe?: boolean): void;
 export function shouldArrayOfObj(value: any): void;
 export function shouldArrayOfObjWithProperties(value: any): void;
+export function shouldArrayOfBuffer(value: any): void;
 
 export function shouldBigInt(value: any): void;
 export function shouldBigIntPositive(value: BigInt): void;

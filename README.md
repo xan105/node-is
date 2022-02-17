@@ -117,6 +117,7 @@ Same as above but for a 32-bit (x86) binary.
 #### `isArrayOfIntegerWithinRange(value: number[], min: number, max: number, safe?: boolean): boolean`
 #### `isArrayOfObj(value: any): boolean`
 #### `isArrayOfObjWithProperties(value: any): boolean`
+#### `isArrayOfBuffer(value: any): boolean`
 #### `isBigInt(value: any): boolean`
 #### `isBigIntPositive(value: BigInt): boolean`
 #### `isBigIntPositiveOrZero(value: BigInt): boolean`
@@ -184,6 +185,7 @@ _same as above: perform the same check but throw an error instead._
 #### `shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number, safe?: boolean): void`
 #### `shouldArrayOfObj(value: any): void`
 #### `shouldArrayOfObjWithProperties(value: any): void`
+#### `shouldArrayOfBuffer(value: any): void`
 #### `shouldBigInt(value: any): void`
 #### `shouldBigIntPositive(value: BigInt): void`
 #### `shouldBigIntPositiveOrZero(value: BigInt): void`

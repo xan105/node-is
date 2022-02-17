@@ -9,6 +9,7 @@ export function isArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean):
 export function isArrayOfIntegerWithinRange(value: number[], min: number, max: number,safe?: boolean): boolean;
 export function isArrayOfObj(value: any): boolean;
 export function isArrayOfObjWithProperties(value: any): boolean;
+export function isArrayOfBuffer(value: any): boolean;
 
 export function isBigInt(value: any): boolean;
 export function isBigIntPositive(value: BigInt): boolean;

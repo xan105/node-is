@@ -28,6 +28,9 @@ t.notOk(check.isArrayOfObjWithProperties({foo: "bar"}, ["foo"]), "isArrayOfObjWi
 t.notOk(check.isArrayOfObjWithProperties(["foo","bar"], ["foo"]), "isArrayOfObjWithProperties()");
 t.throws(function(){ check.isArrayOfObjWithProperties([{foo: "bar"}], "foo") }, "isArrayOfObjWithProperties()");
 
+t.ok(check.isArrayOfBuffer([Buffer.from("foo"),Buffer.from("bar")]), "isArrayOfBuffer()");
+t.notOk(check.isArrayOfBuffer([Buffer.from("foo"),"bar"]), "isArrayOfBuffer()");
+
 //assert
 t.doesNotThrow(function(){ assert.shouldArray([]) }, "shouldArray()");
 t.doesNotThrow(function(){ assert.shouldArray(new Array(1)) }, "shouldArray()");
@@ -51,6 +54,9 @@ t.doesNotThrow(function(){ assert.shouldArrayOfObjWithProperties([{foo: "bar", h
 t.throws(function(){ assert.shouldArrayOfObjWithProperties([{hello: "world"},{foo: "bar", hello: "world"}], ["foo"]) }, "shoulArrayOfObjWithProperties()");
 t.throws(function(){ assert.shouldArrayOfObjWithProperties({foo: "bar"}, ["foo"]) }, "shoulArrayOfObjWithProperties()");
 t.throws(function(){ assert.shouldArrayOfObjWithProperties(["foo","bar"], ["foo"]) }, "shoulArrayOfObjWithProperties()");
+
+t.doesNotThrow(function(){ assert.shouldArrayOfBuffer([Buffer.from("foo"),Buffer.from("bar")]) }, "shouldArrayOfBuffer()");
+t.throws(function(){ assert.shouldArrayOfBuffer([Buffer.from("foo"),"bar"]) }, "shouldArrayOfBuffer()");
 
 t.end();
 });
