@@ -1,6 +1,6 @@
 {
   "name": "@xan105/is",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Collection of various 'is ... ?' checks",
   "type": "module",
   "exports": {
@@ -44,6 +44,6 @@
     "tap": "^15.1.6"
   },
   "dependencies": {
-    "@xan105/error": "^1.1.0"
+    "@xan105/error": "^1.1.1"
   }
 }
