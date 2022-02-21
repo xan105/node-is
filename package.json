@@ -1,6 +1,6 @@
 {
   "name": "@xan105/is",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "Collection of various 'is ... ?' checks",
   "type": "module",
   "exports": {
