@@ -6,17 +6,16 @@ Collection of various 'is ... ?' checks.
 Example
 =======
 
-Check binary x64 or x86
+Check Windows/Linux binary x64 or x86
 ```js
 import { is64bit } from "@xan105/is";
 const is64 = await is64bit("path/to/executable");
 ```
 
-Check is valid PNG file
+Check is PNG file
 ```js
 import { isPNG } from "@xan105/is";
-import { readFile } from "node:fs/promises";
-const valid = isPNG(await readFile("path/to/img")); //read as a Buffer
+const is = await isPNG("path/to/img");
 ```
 
 Check winver
@@ -59,7 +58,9 @@ assert.shouldArrayOfString(["a","b"]);
 Install
 =======
 
-`npm install @xan105/is`
+```
+npm install @xan105/is
+```
 
 API
 ===
@@ -68,9 +69,9 @@ API
 
 ## Named export
 
-#### `is64bit (filePath: string, platform?: string): boolean`
+#### `is64bit(filePath: string): Promise<boolean>`
 
-Check if it's a 64-bit (x86_64) binary.<br />
+Check if it's a 64-bit (x86_64) Windows or Linux binary.<br />
 
 📖 cf:
 - https://docs.microsoft.com/en-us/windows/win32/debug/pe-format
@@ -80,27 +81,20 @@ Check if it's a 64-bit (x86_64) binary.<br />
 ##### Example
 
 ```js 
-import { is64bit } from "@xan105/is/bin";
+import { is64bit } from "@xan105/is";
 const is64 = await is64bit("hello_world.exe"); //True or false
 ```
 
-Check binary from another platform
+#### `is32bit(filePath: string): Promise<boolean>`
 
-```js 
-import { is64bit } from "@xan105/is/bin";
-//Linux binary with Node running on Windows
-const is64 = await is64bit("hello_world","linux"); //same values as os.platform()
-//windows binary with Node running on Linux
-const is64 = await is64bit("hello_world.exe","win32");
-```
+Same as above but for a 32-bit (x86) Windows or Linux binary.
 
-#### `is32bit (filePath: string, platform?: string): boolean`
-
-Same as above but for a 32-bit (x86) binary.
-
-#### `isPNG(buffer: Buffer): boolean`
-#### `isJPG(buffer: Buffer): boolean`
-#### `isICO(buffer: Buffer): boolean`
+#### `isPNG(filePath: string): Promise<boolean>`
+#### `isJPG(filePath: string): Promise<boolean>`
+#### `isICO(filePath: string): Promise<boolean>`
+#### `isGIF(filePath: string): Promise<boolean>`
+#### `isWEBP(filePath: string): Promise<boolean>`
+#### `isQOI(filePath: string): Promise<boolean>`
 
 #### `isIP(value: string): boolean`
 #### `isIPv4(value: string): boolean`
@@ -163,12 +157,15 @@ alias: `isWin64(): boolean`
 
 _same as above: perform the same check but throw an error instead._
 
-#### `should64bit (filePath: string, platform?: string): void`
-#### `should32bit (filePath: string, platform?: string): void`
+#### `should64bit (filePath: string): Promise<void>`
+#### `should32bit (filePath: string): Promise<void>`
 
-#### `shouldPNG(buffer: Buffer): void`
-#### `shouldJPG(buffer: Buffer): void`
-#### `shouldICO(buffer: Buffer): void`
+#### `shouldPNG(filePath: string): Promise<void>`
+#### `shouldJPG(filePath: string): Promise<void>`
+#### `shouldICO(filePath: string): Promise<void>`
+#### `shouldGIF(filePath: string): Promise<void>`
+#### `shouldWEBP(filePath: string): Promise<void>`
+#### `shouldQOI(filePath: string): Promise<void>`
 
 #### `shouldIP(value: string): void`
 #### `shouldIPv4(value: string): void`
