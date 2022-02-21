@@ -1,4 +1,5 @@
 import t from 'tap';
+import { Buffer } from "node:buffer";
 import * as check from "../lib/index.js";
 import { assert } from "../lib/index.js";
 
