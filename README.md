@@ -8,8 +8,9 @@ Example
 
 Check Windows/Linux binary x64 or x86
 ```js
-import { is64bit } from "@xan105/is";
+import { is64bit, is32bit } from "@xan105/is";
 const is64 = await is64bit("path/to/executable");
+const is32 = await is32bit("path/to/executable");
 ```
 
 Check is PNG file
@@ -71,23 +72,11 @@ API
 
 #### `is64bit(filePath: string): Promise<boolean>`
 
-Check if it's a 64-bit (x86_64) Windows or Linux binary.<br />
-
-📖 cf:
-- https://docs.microsoft.com/en-us/windows/win32/debug/pe-format
-- https://docs.microsoft.com/en-us/windows/win32/debug/pe-format#machine-types
-- https://en.wikipedia.org/wiki/Executable_and_Linkable_Format#File_header
-
-##### Example
-
-```js 
-import { is64bit } from "@xan105/is";
-const is64 = await is64bit("hello_world.exe"); //True or false
-```
+Check if it's a 64-bits (x86_64) Windows or Linux binary.<br />
 
 #### `is32bit(filePath: string): Promise<boolean>`
 
-Same as above but for a 32-bit (x86) Windows or Linux binary.
+Same as above but for a 32-bits (x86) Windows or Linux binary.
 
 #### `isPNG(filePath: string): Promise<boolean>`
 #### `isJPG(filePath: string): Promise<boolean>`
