@@ -99,7 +99,7 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 #### `isArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean): boolean`
 #### `isArrayOfIntegerWithinRange(value: number[], min: number, max: number, safe?: boolean): boolean`
 #### `isArrayOfObj(value: any): boolean`
-#### `isArrayOfObjWithProperties(value: any): boolean`
+#### `isArrayOfObjWithProperties(value: any, prop: string[]): boolean`
 #### `isArrayOfBuffer(value: any): boolean`
 #### `isBigInt(value: any): boolean`
 #### `isBigIntPositive(value: BigInt): boolean`
@@ -170,7 +170,7 @@ _same as above: perform the same check but throw an error instead._
 #### `shouldArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean): void`
 #### `shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number, safe?: boolean): void`
 #### `shouldArrayOfObj(value: any): void`
-#### `shouldArrayOfObjWithProperties(value: any): void`
+#### `shouldArrayOfObjWithProperties(value: any, prop: string[]): void`
 #### `shouldArrayOfBuffer(value: any): void`
 #### `shouldBigInt(value: any): void`
 #### `shouldBigIntPositive(value: BigInt): void`

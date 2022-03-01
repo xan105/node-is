@@ -8,7 +8,7 @@ export function shouldArrayOfIntegerPositive(value: number[], safe?: boolean): v
 export function shouldArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean): void;
 export function shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number,safe?: boolean): void;
 export function shouldArrayOfObj(value: any): void;
-export function shouldArrayOfObjWithProperties(value: any): void;
+export function shouldArrayOfObjWithProperties(value: any, prop: string[]): void;
 export function shouldArrayOfBuffer(value: any): void;
 
 export function shouldBigInt(value: any): void;

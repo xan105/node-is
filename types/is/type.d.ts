@@ -8,7 +8,7 @@ export function isArrayOfIntegerPositive(value: number[], safe?: boolean): boole
 export function isArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean): boolean;
 export function isArrayOfIntegerWithinRange(value: number[], min: number, max: number,safe?: boolean): boolean;
 export function isArrayOfObj(value: any): boolean;
-export function isArrayOfObjWithProperties(value: any): boolean;
+export function isArrayOfObjWithProperties(value: any, prop: string[]): boolean;
 export function isArrayOfBuffer(value: any): boolean;
 
 export function isBigInt(value: any): boolean;
