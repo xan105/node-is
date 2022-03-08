@@ -139,6 +139,16 @@ t.ok(check.isIntegerWithinRange(0,0,2), "isIntegerWithinRange()");
 t.ok(check.isIntegerWithinRange(2,0,2), "isIntegerWithinRange()");
 t.notOk(check.isIntegerWithinRange(-1,0,2), "isIntegerWithinRange()");
 
+t.ok(check.isNumber(0.2), "isNumber()");
+t.ok(check.isNumber(Number("1")), "isNumber()");
+t.ok(check.isNumber(+"1"), "isNumber()");
+t.notOk(check.isNumber("1"), "isNumber()");
+t.notOk(check.isNumber(new Number(1)), "isNumber()");
+t.ok(check.isNumberWithinRange(0.1,0,1), "isNumberWithinRange()");
+t.ok(check.isNumberWithinRange(0,0,1), "isNumberWithinRange()");
+t.ok(check.isNumberWithinRange(1,0,1), "isNumberWithinRange()");
+t.notOk(check.isNumberWithinRange(-0.1,0,1), "isIntegerWithinRange()");
+
 //assert
 t.doesNotThrow(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER + 1, false) }, "shouldInteger()");
 t.doesNotThrow(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER, false) }, "shouldInteger()");
@@ -169,6 +179,16 @@ t.doesNotThrow(function(){ assert.shouldIntegerWithinRange(2,0,2) }, "shouldInte
 t.throws(function(){ assert.shouldIntegerWithinRange(-1,0,2) }, "shouldIntegerWithinRange()");
 t.throws(function(){ assert.shouldIntegerWithinRange(new Number(1),0,1) }, {code: "ERR_USAGE_NOT_RECOMMENDED"}, "shouldIntegerWithinRange()");
 
+t.doesNotThrow(function(){ assert.shouldNumber(0.2) }, "shouldNumber()");
+t.doesNotThrow(function(){ assert.shouldNumber(Number("1")) }, "shouldNumber()");
+t.doesNotThrow(function(){ assert.shouldNumber(+"1") }, "shouldNumber()");
+t.throws(function(){ assert.shouldNumber("1") }, "shouldNumber()");
+t.throws(function(){ assert.shouldNumber(new Number(1)) }, "shouldNumber()");
+t.doesNotThrow(function(){ assert.shouldNumberWithinRange(0.1,0,1) }, "shouldNumberWithinRange()");
+t.doesNotThrow(function(){ assert.shouldNumberWithinRange(0,0,1) }, "shouldNumberWithinRange()");
+t.doesNotThrow(function(){ assert.shouldNumberWithinRange(1,0,1) }, "shouldNumberWithinRange()");
+t.throws(function(){ assert.shouldNumberWithinRange(-0.1,0,1) }, "shouldIntegerWithinRange()");
+
 t.end();
 });
 
@@ -193,6 +213,11 @@ t.notOk(check.isObjNotEmpty(new Object()), "plain empty obj");
 t.notOk(check.isObjNotEmpty(Object.create(null)), "plain empty obj");
 t.ok(check.isObjNotEmpty({foo: "bar"}), "plain empty obj");
 
+t.ok(check.isObjWithProperties({foo: "bar", bar: "foo"}, ["foo", "bar"]), "isObjWithProperties()");
+t.ok(check.isObjWithProperties({foo: "bar", bar: "foo"}, ["foo"]), "isObjWithProperties()");
+t.throws(function(){ check.isObjWithProperties({foo: "bar"}, "foo") }, "isObjWithProperties()");
+t.notOk(check.isObjWithProperties({foo: "bar"}, ["bar"]), "isObjWithProperties()");
+
 //assert
 t.doesNotThrow(function(){ assert.shouldObj({}) }, "shouldObj()");
 t.doesNotThrow(function(){ assert.shouldObj(new Object()) }, "shouldObj()");
@@ -212,6 +237,11 @@ t.throws(function(){ assert.shouldObjNotEmpty({}) }, "shouldObjNotEmpty()");
 t.throws(function(){ assert.shouldObjNotEmpty(new Object()) }, "shouldObjNotEmpty()");
 t.throws(function(){ assert.shouldObjNotEmpty(Object.create(null)) }, "shouldObjNotEmpty()");
 t.doesNotThrow(function(){ assert.shouldObjNotEmpty({foo: "bar"}) }, "shouldObjNotEmpty()");
+
+t.doesNotThrow(function(){ assert.shouldObjWithProperties({foo: "bar", bar: "foo"}, ["foo", "bar"]) }, "shouldObjWithProperties()");
+t.doesNotThrow(function(){ assert.shouldObjWithProperties({foo: "bar", bar: "foo"}, ["foo"]) }, "shouldObjWithProperties()");
+t.throws(function(){ assert.shouldObjWithProperties({foo: "bar"}, "foo") }, "shouldObjWithProperties()");
+t.throws(function(){ assert.shouldObjWithProperties({foo: "bar"}, ["bar"]) }, "shouldObjWithProperties()");
 
 t.end();
 });
