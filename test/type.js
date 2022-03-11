@@ -152,42 +152,42 @@ t.notOk(check.isNumberWithinRange(-0.1,0,1), "isIntegerWithinRange()");
 //assert
 t.doesNotThrow(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER + 1, false) }, "shouldInteger()");
 t.doesNotThrow(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER, false) }, "shouldInteger()");
-t.throws(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER + 1, true) }, {code: "ERR_INVALID_ARGS"}, "shouldInteger()");
+t.throws(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER + 1, true) }, {code: "ERR_INVALID_ARG"}, "shouldInteger()");
 t.doesNotThrow(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER, true) }, "shouldInteger()");
-t.throws(function(){ assert.shouldInteger(0.2) }, {code: "ERR_INVALID_ARGS"}, "shouldInteger()");
+t.throws(function(){ assert.shouldInteger(0.2) }, {code: "ERR_INVALID_ARG"}, "shouldInteger()");
 t.doesNotThrow(function(){ assert.shouldInteger(0) }, "shouldInteger()");
 t.doesNotThrow(function(){ assert.shouldInteger(-1) }, "shouldInteger()");
 t.doesNotThrow(function(){ assert.shouldInteger(Number("1")) }, "shouldInteger()");
 t.doesNotThrow(function(){ assert.shouldInteger(+1) }, "shouldInteger()");
 t.doesNotThrow(function(){ assert.shouldInteger(Number(1n)) }, "shouldInteger()");
-t.throws(function(){ assert.shouldInteger(1n) }, {code: "ERR_INVALID_ARGS"}, "shouldInteger()");
+t.throws(function(){ assert.shouldInteger(1n) }, {code: "ERR_INVALID_ARG"}, "shouldInteger()");
 t.throws(function(){ assert.shouldInteger(new Number(1)) }, {code: "ERR_USAGE_NOT_RECOMMENDED"}, "shouldInteger()");
 
 t.doesNotThrow(function(){ assert.shouldIntegerPositive(1) }, "shouldIntegerPositive()");
-t.throws(function(){ assert.shouldIntegerPositive(0) }, {code: "ERR_INVALID_ARGS"}, "shouldIntegerPositive()");
-t.throws(function(){ assert.shouldIntegerPositive(-1) }, {code: "ERR_INVALID_ARGS"}, "shouldIntegerPositive()");
+t.throws(function(){ assert.shouldIntegerPositive(0) }, {code: "ERR_INVALID_ARG"}, "shouldIntegerPositive()");
+t.throws(function(){ assert.shouldIntegerPositive(-1) }, {code: "ERR_INVALID_ARG"}, "shouldIntegerPositive()");
 t.throws(function(){ assert.shouldIntegerPositive(new Number(1)) }, {code: "ERR_USAGE_NOT_RECOMMENDED"}, "shouldIntegerPositive()");
 
 t.doesNotThrow(function(){ assert.shouldIntegerPositiveOrZero(1) }, "shouldIntegerPositiveOrZero()");
 t.doesNotThrow(function(){ assert.shouldIntegerPositiveOrZero(0) }, "shouldIntegerPositiveOrZero()");
-t.throws(function(){ assert.shouldIntegerPositiveOrZero(-1) }, {code: "ERR_INVALID_ARGS"}, "shouldIntegerPositiveOrZero()");
+t.throws(function(){ assert.shouldIntegerPositiveOrZero(-1) }, {code: "ERR_INVALID_ARG"}, "shouldIntegerPositiveOrZero()");
 t.throws(function(){ assert.shouldIntegerPositiveOrZero(new Number(1)) }, {code: "ERR_USAGE_NOT_RECOMMENDED"}, "shouldIntegerPositiveOrZero()");
 
 t.doesNotThrow(function(){ assert.shouldIntegerWithinRange(1,0,2) }, "shouldIntegerWithinRange()");
 t.doesNotThrow(function(){ assert.shouldIntegerWithinRange(0,0,2) }, "shouldIntegerWithinRange()");
 t.doesNotThrow(function(){ assert.shouldIntegerWithinRange(2,0,2) }, "shouldIntegerWithinRange()");
-t.throws(function(){ assert.shouldIntegerWithinRange(-1,0,2) }, {code: "ERR_INVALID_ARGS"}, "shouldIntegerWithinRange()");
+t.throws(function(){ assert.shouldIntegerWithinRange(-1,0,2) }, {code: "ERR_INVALID_ARG"}, "shouldIntegerWithinRange()");
 t.throws(function(){ assert.shouldIntegerWithinRange(new Number(1),0,1) }, {code: "ERR_USAGE_NOT_RECOMMENDED"}, "shouldIntegerWithinRange()");
 
 t.doesNotThrow(function(){ assert.shouldNumber(0.2) }, "shouldNumber()");
 t.doesNotThrow(function(){ assert.shouldNumber(Number("1")) }, "shouldNumber()");
 t.doesNotThrow(function(){ assert.shouldNumber(+"1") }, "shouldNumber()");
-t.throws(function(){ assert.shouldNumber("1") }, {code: "ERR_INVALID_ARGS"}, "shouldNumber()");
+t.throws(function(){ assert.shouldNumber("1") }, {code: "ERR_INVALID_ARG"}, "shouldNumber()");
 t.throws(function(){ assert.shouldNumber(new Number(1)) }, {code: "ERR_USAGE_NOT_RECOMMENDED"}, "shouldNumber()");
 t.doesNotThrow(function(){ assert.shouldNumberWithinRange(0.1,0,1) }, "shouldNumberWithinRange()");
 t.doesNotThrow(function(){ assert.shouldNumberWithinRange(0,0,1) }, "shouldNumberWithinRange()");
 t.doesNotThrow(function(){ assert.shouldNumberWithinRange(1,0,1) }, "shouldNumberWithinRange()");
-t.throws(function(){ assert.shouldNumberWithinRange(-0.1,0,1) }, {code: "ERR_INVALID_ARGS"}, "shouldIntegerWithinRange()");
+t.throws(function(){ assert.shouldNumberWithinRange(-0.1,0,1) }, {code: "ERR_INVALID_ARG"}, "shouldIntegerWithinRange()");
 
 t.end();
 });
@@ -277,23 +277,23 @@ t.doesNotThrow(function(){ assert.shouldString("") }, "shouldString()");
 t.doesNotThrow(function(){ assert.shouldString("1") }, "shouldString()");
 t.doesNotThrow(function(){ assert.shouldString(String(1)) }, "shouldString()");
 t.throws(function(){ assert.shouldString(new String("hello")) }, {code: "ERR_USAGE_NOT_RECOMMENDED"}, "shouldString()");
-t.throws(function(){ assert.shouldString(null) }, {code: "ERR_INVALID_ARGS"}, "shouldString()");
-t.throws(function(){ assert.shouldString(undefined) }, {code: "ERR_INVALID_ARGS"}, "shouldString()");
-t.throws(function(){ assert.shouldString(1) }, {code: "ERR_INVALID_ARGS"}, "shouldString()");
+t.throws(function(){ assert.shouldString(null) }, {code: "ERR_INVALID_ARG"}, "shouldString()");
+t.throws(function(){ assert.shouldString(undefined) }, {code: "ERR_INVALID_ARG"}, "shouldString()");
+t.throws(function(){ assert.shouldString(1) }, {code: "ERR_INVALID_ARG"}, "shouldString()");
 
 t.doesNotThrow(function(){ assert.shouldStringNotEmpty("hello world") }, "shouldStringNotEmpty()");
-t.throws(function(){ assert.shouldStringNotEmpty("") }, {code: "ERR_INVALID_ARGS"}, "shouldStringNotEmpty()");
+t.throws(function(){ assert.shouldStringNotEmpty("") }, {code: "ERR_INVALID_ARG"}, "shouldStringNotEmpty()");
 
 t.doesNotThrow(function(){ assert.shouldHexString("50450000") }, "shouldHexString()");
 t.doesNotThrow(function(){ assert.shouldHexString(Buffer.from("50450000","hex").toString("hex")) }, "shouldHexString()");
 t.doesNotThrow(function(){ assert.shouldHexString("ab1f") }, "shouldHexString()");
 t.doesNotThrow(function(){ assert.shouldHexString("AB1f") }, "shouldHexString()");
 t.doesNotThrow(function(){ assert.shouldHexString("a") }, "shouldHexString()");
-t.throws(function(){ assert.shouldHexString("") }, {code: "ERR_INVALID_ARGS"}, "shouldHexString()");
-t.throws(function(){ assert.shouldHexString("g") }, {code: "ERR_INVALID_ARGS"}, "shouldHexString()");
-t.throws(function(){ assert.shouldHexString("aabb110h") }, {code: "ERR_INVALID_ARGS"}, "shouldHexString()");
-t.throws(function(){ assert.shouldHexString(" aabb ") }, {code: "ERR_INVALID_ARGS"}, "shouldHexString()");
-t.throws(function(){ assert.shouldHexString("hhaabb") }, {code: "ERR_INVALID_ARGS"}, "shouldHexString()");
+t.throws(function(){ assert.shouldHexString("") }, {code: "ERR_INVALID_ARG"}, "shouldHexString()");
+t.throws(function(){ assert.shouldHexString("g") }, {code: "ERR_INVALID_ARG"}, "shouldHexString()");
+t.throws(function(){ assert.shouldHexString("aabb110h") }, {code: "ERR_INVALID_ARG"}, "shouldHexString()");
+t.throws(function(){ assert.shouldHexString(" aabb ") }, {code: "ERR_INVALID_ARG"}, "shouldHexString()");
+t.throws(function(){ assert.shouldHexString("hhaabb") }, {code: "ERR_INVALID_ARG"}, "shouldHexString()");
 
 t.end();
 });
@@ -317,13 +317,13 @@ t.doesNotThrow(function(){ assert.shouldBoolean(true) }, "shouldBoolean()");
 t.doesNotThrow(function(){ assert.shouldBoolean(false) }, "shouldBoolean()");
 t.doesNotThrow(function(){ assert.shouldBoolean(Boolean(1)) }, "shouldBoolean()");
 t.doesNotThrow(function(){ assert.shouldBoolean(!!(1)) }, "shouldBoolean()");
-t.throws(function(){ assert.shouldBoolean("string") }, {code: "ERR_INVALID_ARGS"}, "shouldBoolean()");
-t.throws(function(){ assert.shouldBoolean(1) }, {code: "ERR_INVALID_ARGS"}, "shouldBoolean()");
-t.throws(function(){ assert.shouldBoolean(["foo","bar"]) }, {code: "ERR_INVALID_ARGS"}, "shouldBoolean()");
-t.throws(function(){ assert.shouldBoolean({foo: "bar"}) }, {code: "ERR_INVALID_ARGS"}, "shouldBoolean()");
+t.throws(function(){ assert.shouldBoolean("string") }, {code: "ERR_INVALID_ARG"}, "shouldBoolean()");
+t.throws(function(){ assert.shouldBoolean(1) }, {code: "ERR_INVALID_ARG"}, "shouldBoolean()");
+t.throws(function(){ assert.shouldBoolean(["foo","bar"]) }, {code: "ERR_INVALID_ARG"}, "shouldBoolean()");
+t.throws(function(){ assert.shouldBoolean({foo: "bar"}) }, {code: "ERR_INVALID_ARG"}, "shouldBoolean()");
 t.throws(function(){ assert.shouldBoolean(new Boolean(true)) }, {code: "ERR_USAGE_NOT_RECOMMENDED"}, "shouldBoolean()");
-t.throws(function(){ assert.shouldBoolean(null) }, {code: "ERR_INVALID_ARGS"}, "shouldBoolean()");
-t.throws(function(){ assert.shouldBoolean(undefined) }, {code: "ERR_INVALID_ARGS"}, "shouldBoolean()");
+t.throws(function(){ assert.shouldBoolean(null) }, {code: "ERR_INVALID_ARG"}, "shouldBoolean()");
+t.throws(function(){ assert.shouldBoolean(undefined) }, {code: "ERR_INVALID_ARG"}, "shouldBoolean()");
 
 t.end();
 });
