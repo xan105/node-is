@@ -40,8 +40,8 @@
   },
   "homepage": "https://github.com/xan105/node-is#readme",
   "devDependencies": {
-    "eslint": "^8.9.0",
-    "tap": "^15.1.6"
+    "eslint": "^8.14.0",
+    "tap": "^16.0.1"
   },
   "dependencies": {
     "@xan105/error": "^1.2.0"
