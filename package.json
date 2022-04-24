@@ -16,7 +16,7 @@
     "test": "test --no-coverage"
   },
   "scripts": {
-    "lint": "npx eslint --ignore-path .gitignore ./**/*.{js,mjs}",
+    "lint": "npx eslint --ignore-path .gitignore './**/*.{js,mjs}'",
     "test": "tap"
   },
   "keywords": [
