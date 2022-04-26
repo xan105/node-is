@@ -5,7 +5,8 @@
   "type": "module",
   "exports": {
     ".": "./lib/index.js",
-    "./assert": "./lib/assert.js"
+    "./assert": "./lib/assert.js",
+    "./opt": "./lib/opt.js"
   },
   "types": "./types/index.d.ts",
   "engines": {

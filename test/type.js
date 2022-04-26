@@ -1,7 +1,7 @@
 import t from 'tap';
 import { Buffer } from "node:buffer";
 import * as check from "../lib/index.js";
-import { assert } from "../lib/index.js";
+import { assert, opt } from "../lib/index.js";
 
 t.test('array', t => { 
 
@@ -59,6 +59,19 @@ t.throws(function(){ assert.shouldArrayOfObjWithProperties(["foo","bar"], ["foo"
 t.doesNotThrow(function(){ assert.shouldArrayOfBuffer([Buffer.from("foo"),Buffer.from("bar")]) }, "shouldArrayOfBuffer()");
 t.throws(function(){ assert.shouldArrayOfBuffer([Buffer.from("foo"),"bar"]) }, "shouldArrayOfBuffer()");
 
+//as (fail only)
+t.equal(opt.asArray({}), null, "as not an array");
+t.equal(opt.asArrayNotEmpty([]), null, "as an empty array");
+t.equal(opt.asArrayOfString([1,2]), null, "as not an array of string");
+t.equal(opt.asArrayOfStringNotEmpty(["abc","","def"]), null, "as an array with empty string");
+t.equal(opt.asArrayOfNumber(["1"]), null, "as not an array of number");
+t.equal(opt.asArrayOfNumber([1n]), null, "as not an array of number");
+t.equal(opt.asArrayOfObjWithProperties([{hello: "world"},{foo: "bar", hello: "world"}], ["foo"]), null, "asArrayOfObjWithProperties()");
+t.equal(opt.asArrayOfObjWithProperties({foo: "bar"}, ["foo"]), null, "asArrayOfObjWithProperties()");
+t.equal(opt.asArrayOfObjWithProperties(["foo","bar"], ["foo"]), null, "asArrayOfObjWithProperties()");
+t.throws(function(){ opt.asArrayOfObjWithProperties([{foo: "bar"}], "foo") }, "asArrayOfObjWithProperties()");
+t.equal(opt.asArrayOfBuffer([Buffer.from("foo"),"bar"]), null, "asArrayOfBuffer()");
+
 t.end();
 });
 
@@ -106,6 +119,15 @@ t.doesNotThrow(function(){ assert.shouldBigIntWithinRange(1n,0n,2n) }, "shouldBi
 t.doesNotThrow(function(){ assert.shouldBigIntWithinRange(0n,0n,2n) }, "shouldBigIntWithinRange()");
 t.doesNotThrow(function(){ assert.shouldBigIntWithinRange(2n,0n,2n) }, "shouldBigIntWithinRange()");
 t.throws(function(){ assert.shouldBigIntWithinRange(-1n,0n,2n) }, "shouldBigIntWithinRange()");
+
+//as (fail only)
+t.equal(opt.asBigInt(Number.MAX_SAFE_INTEGER), null, "as not bigint");
+t.equal(opt.asBigInt(Number.MAX_SAFE_INTEGER + 1), null, "as not bigint");
+t.equal(opt.asBigInt("9007199254740991"), null, "as not bigint");
+t.equal(opt.asBigIntPositive(0n), null, "asBigIntPositive()");
+t.equal(opt.asBigIntPositive(-1n), null, "asBigIntPositive()");
+t.equal(opt.asBigIntPositiveOrZero(-1n), null, "asBigIntPositiveOrZero()");
+t.equal(opt.asBigIntWithinRange(-1n,0n,2n), null, "asBigIntWithinRange()");
 
 t.end();
 });
@@ -189,6 +211,21 @@ t.doesNotThrow(function(){ assert.shouldNumberWithinRange(0,0,1) }, "shouldNumbe
 t.doesNotThrow(function(){ assert.shouldNumberWithinRange(1,0,1) }, "shouldNumberWithinRange()");
 t.throws(function(){ assert.shouldNumberWithinRange(-0.1,0,1) }, {code: "ERR_INVALID_ARG"}, "shouldIntegerWithinRange()");
 
+//as (fail only)
+
+t.equal(opt.asInteger(Number.MAX_SAFE_INTEGER + 1, true), null, "asInteger()");
+t.throws(function(){ opt.asInteger(Number.MAX_SAFE_INTEGER, "true") }, null, "asInteger()");
+t.equal(opt.asInteger(0.2), null, "asInteger()");
+t.equal(opt.asInteger(1n), null, "asInteger()");
+t.equal(opt.asInteger(new Number(1)), null, "asInteger()");
+t.equal(opt.asIntegerPositive(0), null, "asIntegerPositive()");
+t.equal(opt.asIntegerPositive(-1), null, "asIntegerPositive()");
+t.equal(opt.asIntegerPositiveOrZero(-1), null, "asIntegerPositiveOrZero()");
+t.equal(opt.asIntegerWithinRange(-1,0,2), null, "asIntegerWithinRange()");
+t.equal(opt.asNumber("1"), null, "asNumber()");
+t.equal(opt.asNumber(new Number(1)), null, "asNumber()");
+t.equal(opt.asNumberWithinRange(-0.1,0,1), null, "asIntegerWithinRange()");
+
 t.end();
 });
 
@@ -243,6 +280,24 @@ t.doesNotThrow(function(){ assert.shouldObjWithProperties({foo: "bar", bar: "foo
 t.throws(function(){ assert.shouldObjWithProperties({foo: "bar"}, "foo") }, "shouldObjWithProperties()");
 t.throws(function(){ assert.shouldObjWithProperties({foo: "bar"}, ["bar"]) }, "shouldObjWithProperties()");
 
+//as (fail only)
+
+t.equal(opt.asObj(function(){}), null, "as plain obj");
+t.equal(opt.asObj(null), null, "as plain obj");
+t.equal(opt.asObj(undefined), null, "as plain obj");
+t.equal(opt.asObj([]), null, "as plain obj");
+t.equal(opt.asObj(new Boolean()), null, "as plain obj");
+t.equal(opt.asObj(new Number()), null, "as plain obj");
+t.equal(opt.asObj(new String()), null, "as plain obj");
+t.equal(opt.asObj(new Date()), null, "as plain obj");
+t.equal(opt.asObj(/.+/g), null, "as plain obj");
+t.equal(opt.asObj([]), null, "as plain obj");
+t.equal(opt.asObjNotEmpty({}), null, "as plain empty obj");
+t.equal(opt.asObjNotEmpty(new Object()), null, "as plain empty obj");
+t.equal(opt.asObjNotEmpty(Object.create(null)), null, "as plain empty obj");
+t.throws(function(){ opt.asObjWithProperties({foo: "bar"}, "foo") }, null, "asObjWithProperties()");
+t.equal(opt.asObjWithProperties({foo: "bar"}, ["bar"]), null, "asObjWithProperties()");
+
 t.end();
 });
 
@@ -295,6 +350,19 @@ t.throws(function(){ assert.shouldHexString("aabb110h") }, {code: "ERR_INVALID_A
 t.throws(function(){ assert.shouldHexString(" aabb ") }, {code: "ERR_INVALID_ARG"}, "shouldHexString()");
 t.throws(function(){ assert.shouldHexString("hhaabb") }, {code: "ERR_INVALID_ARG"}, "shouldHexString()");
 
+//as (fail only)
+
+t.equal(opt.asString(new String("hello")), null, "as string");
+t.equal(opt.asString(null), null, "as string");
+t.equal(opt.asString(undefined), null, "as string");
+t.equal(opt.asString(1), null, "as string");
+t.equal(opt.asStringNotEmpty(""), null, "as string not empty");
+t.equal(opt.asHexString(""), null, "as hex string");
+t.equal(opt.asHexString("g"), null, "as hex string");
+t.equal(opt.asHexString("aabb110h"), null, "as hex string");
+t.equal(opt.asHexString(" aabb "), null, "as hex string");
+t.equal(opt.asHexString("hhaabb"), null, "as hex string");
+
 t.end();
 });
 
@@ -324,6 +392,16 @@ t.throws(function(){ assert.shouldBoolean({foo: "bar"}) }, {code: "ERR_INVALID_A
 t.throws(function(){ assert.shouldBoolean(new Boolean(true)) }, {code: "ERR_USAGE_NOT_RECOMMENDED"}, "shouldBoolean()");
 t.throws(function(){ assert.shouldBoolean(null) }, {code: "ERR_INVALID_ARG"}, "shouldBoolean()");
 t.throws(function(){ assert.shouldBoolean(undefined) }, {code: "ERR_INVALID_ARG"}, "shouldBoolean()");
+
+//as (fail only)
+
+t.equal(opt.asBoolean("string"), null, "as boolean");
+t.equal(opt.asBoolean(1), null, "as boolean");
+t.equal(opt.asBoolean(["foo","bar"]), null, "as boolean");
+t.equal(opt.asBoolean({foo: "bar"}), null, "as boolean");
+t.equal(opt.asBoolean(new Boolean(true)), null, "as boolean");
+t.equal(opt.asBoolean(null), null, "as boolean");
+t.equal(opt.asBoolean(undefined), null, "as boolean");
 
 t.end();
 });

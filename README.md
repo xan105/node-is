@@ -39,8 +39,8 @@ check.isArrayOfString(["a","b"]);
 //etc...
 ```
 
-Assertion<br/>
-_perform the same check but throw an error instead._
+### Assertion
+_Perform the same check but throw an error instead._
 
 ```js
 import { shouldWin10orGreater } from "@xan105/is/assert";
@@ -54,6 +54,20 @@ assert.shouldStringNotEmpty("hello world");
 assert.shouldIntegerWithinRange(1,0,2);
 assert.shouldArrayOfString(["a","b"]);
 //etc...
+```
+
+### Opt
+_Return the given value when the condition is true otherwise null._
+
+```js
+import { asStringNotEmpty, asInteger } from "@xan105/is/opt";
+
+function(option = {}){
+  const options = {
+    param1: asStringNotEmpty(option.param1) ?? "hello world",
+    param2: asInteger(option.param2) ?? 0
+  };
+}
 ```
 
 Install
@@ -160,6 +174,36 @@ alias: `isWin64(): boolean`
 #### `isWin8(): boolean`
 #### `isWin7(): boolean`
 
+#### `isLinux(): boolean`
+#### `isArch(): Promise<boolean>`
+#### `isArchLike(): Promise<boolean>`
+#### `isManjaro(): Promise<boolean>`
+#### `isDebian(): Promise<boolean>`
+#### `isDebianLike(): Promise<boolean>`
+#### `isUbuntu(): Promise<boolean>`
+#### `isUbuntuLike(): Promise<boolean>`
+#### `isMint(): Promise<boolean>`
+#### `isPopOS(): Promise<boolean>`
+#### `isElementaryOS(): Promise<boolean>`
+#### `isDeepin(): Promise<boolean>`
+#### `isRaspberryPiOS(): Promise<boolean>`
+
+alias: `isRaspbian(): Promise<boolean>`
+
+#### `isFedora(): Promise<boolean>`
+#### `isFedoraLike(): Promise<boolean>`
+#### `isOpenSUSE(): Promise<boolean>`
+#### `isSlackware(): Promise<boolean>`
+#### `isGentoo(): Promise<boolean>`
+
+#### `isGnome(): boolean`
+#### `isKDE(): boolean`
+#### `isXFCE(): boolean`
+#### `isMate(): boolean`
+#### `isCinnamon(): boolean`
+
+#### `isWayland(): boolean`
+
 ### assert
 
 _same as above: perform the same check but throw an error instead._
@@ -245,3 +289,94 @@ alias: `shouldWin64(): void`
 #### `shouldWin10(): void`
 #### `shouldWin8(): void`
 #### `shouldWin7(): void`
+
+#### `shouldLinux(): void`
+#### `shouldArch(): Promise<void>`
+#### `shouldArchLike(): Promise<void>`
+#### `shouldManjaro(): Promise<void>`
+#### `shouldDebian(): Promise<void>`
+#### `shouldDebianLike(): Promise<void>`
+#### `shouldUbuntu(): Promise<void>`
+#### `shouldUbuntuLike(): Promise<void>`
+#### `shouldMint(): Promise<void>`
+#### `shouldPopOS(): Promise<void>`
+#### `shouldElementaryOS(): Promise<void>`
+#### `shouldDeepin(): Promise<void>`
+#### `shouldRaspberryPiOS(): Promise<void>`
+
+alias: `shouldRaspbian(): Promise<void>`
+
+#### `shouldFedora(): Promise<void>`
+#### `shouldFedoraLike(): Promise<void>`
+#### `shouldOpenSUSE(): Promise<void>`
+#### `shouldSlackware(): Promise<void>`
+#### `shouldGentoo(): Promise<void>`
+
+#### `shouldGnome(): void`
+#### `shouldKDE(): void`
+#### `shouldXFCE(): void`
+#### `shouldMate(): void`
+#### `shouldCinnamon(): void`
+
+#### `shouldWayland(): void`
+
+### opt
+
+_Return the given value when the condition is true otherwise null._<br/>
+_Works great with operator such as `||` and `??`_
+
+eg:
+```js
+function(option = {}){
+  const options = {
+    param1: asString(option.param1) || "hello world",
+    param2: asInteger(option.param2) ?? 0
+  };
+}
+```
+
+#### `asArray(value: any): any`
+#### `asArrayNotEmpty(value: any): any`
+#### `asArrayOfString(value: string[]): string[] | null`
+#### `asSizeArrayOfString(value: string[], length: number): string[] | null`
+#### `asArrayOfStringNotEmpty(value: string[]): string[] | null`
+#### `asSizeArrayOfStringNotEmpty(value: string[], length: number): string[] | null`
+#### `asArrayOfNumber(value: number[]): number[] | null`
+#### `asSizeArrayOfNumber(value: number[], length: number): number[] | null`
+#### `asArrayOfNumberWithinRange(value: number[], min: number, max: number): number[] | null`
+#### `asSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number): number[] | null`
+#### `asArrayOfInteger(value: number[], safe?: boolean): number[] | null`
+#### `asSizeArrayOfInteger(value: number[], length: number, safe?: boolean): number[] | null`
+#### `asArrayOfIntegerPositive(value: number[], safe?: boolean): number[] | null`
+#### `asSizeArrayOfIntegerPositive(value: number[], length: number, safe?: boolean): number[] | null`
+#### `asArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean): number[] | null`
+#### `asSizeArrayOfIntegerPositiveOrZero(value: number[], length: number, safe?: boolean): number[] | null`
+#### `asArrayOfIntegerWithinRange(value: number[], min: number, max: number, safe?: boolean): number[] | null`
+#### `asSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number, safe?: boolean): number[] | null`
+#### `asArrayOfObj(value: any): any`
+#### `asSizeArrayOfObj(value: any, length: number): any`
+#### `asArrayOfObjWithProperties(value: any, prop: string[]): any`
+#### `asSizeArrayOfObjWithProperties(value: any, length: number, prop: string[]): any`
+#### `asArrayOfBuffer(value: any): any`
+#### `asSizeArrayOfBuffer(value: any, length: number): any`
+
+#### `asBigInt(value: any): any`
+#### `asBigIntPositive(value: BigInt): BigInt | null`
+#### `asBigIntPositiveOrZero(value: BigInt): BigInt | null`
+#### `asBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt): BigInt | null`
+#### `asInteger(value: number, safe?: boolean): number | null`
+#### `asIntegerPositive(value: number, safe?: boolean): number | null`
+#### `asIntegerPositiveOrZero(value: number, safe?: boolean): number | null`
+#### `asIntegerWithinRange(value: number, min: number, max: number, safe?: boolean): number | null`
+#### `asNumber(value: number): number | null`
+#### `asNumberWithinRange(value: number, min: number, max: number): number | null`
+
+#### `asObj(value: any): any`
+#### `asObjNotEmpty(value: any): any`
+#### `asObjWithProperties(value: any, prop: string[]): any`
+
+#### `asString(value: any): any`
+#### `asStringNotEmpty(value: string): string | null`
+#### `asHexString(value: string): string | null`
+#### `asBoolean(value: any): any`
+#### `asBuffer(value: any): any`
