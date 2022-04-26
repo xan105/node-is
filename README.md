@@ -29,6 +29,15 @@ check.isWin64(); //64-bits
 //etc...
 ```
 
+Check Linux
+```js
+import * as check from "@xan105/is";
+check.isDebian();
+check.isDebianLike(); //derivatives
+check.isGnome();
+check.isWayland();
+```
+
 Check type
 ```js
 import * as check from "@xan105/is";
@@ -206,7 +215,8 @@ alias: `isRaspbian(): Promise<boolean>`
 
 ### assert
 
-_same as above: perform the same check but throw an error instead._
+_Perform the same checks as above but throw an error instead._
+_This replace the cumbersome if(...) throw ..._
 
 #### `should64bit (filePath: string): Promise<void>`
 #### `should32bit (filePath: string): Promise<void>`
