@@ -69,11 +69,11 @@ assert.shouldArrayOfString(["a","b"]);
 _Return the given value when the condition is true otherwise null._
 
 ```js
-import { asStringNotEmpty, asInteger } from "@xan105/is/opt";
+import { asString, asInteger } from "@xan105/is/opt";
 
 function(option = {}){
   const options = {
-    param1: asStringNotEmpty(option.param1) ?? "hello world",
+    param1: asString(option.param1) || "hello world",
     param2: asInteger(option.param2) ?? 0
   };
 }
