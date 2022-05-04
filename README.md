@@ -6,7 +6,7 @@ Collection of various 'is ... ?' checks.
 Example
 =======
 
-Check Windows/Linux binary x64 or x86
+Check Windows/Linux 64-bit/32-bit executable
 ```js
 import { is64bit, is32bit } from "@xan105/is";
 const is64 = await is64bit("path/to/executable");
@@ -33,7 +33,7 @@ Check Linux
 ```js
 import * as check from "@xan105/is";
 check.isDebian();
-check.isDebianLike(); //derivatives
+check.isDebianLike(); //Debian + derivatives (eg: Ubuntu)
 check.isGnome();
 check.isWayland();
 ```
