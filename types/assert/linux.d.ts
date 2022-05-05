@@ -1,27 +1,27 @@
-export function shouldLinux(): void;
-export function shouldArch(): Promise<void>;
-export function shouldArchLike(): Promise<void>;
-export function shouldManjaro(): Promise<void>;
-export function shouldDebian(): Promise<void>;
-export function shouldDebianLike(): Promise<void>;
-export function shouldUbuntu(): Promise<void>;
-export function shouldUbuntuLike(): Promise<void>;
-export function shouldMint(): Promise<void>;
-export function shouldPopOS(): Promise<void>;
-export function shouldElementaryOS(): Promise<void>;
-export function shouldDeepin(): Promise<void>;
-export function shouldRaspberryPiOS(): Promise<void>;
-export function shouldRaspbian(): Promise<void>; //alias
-export function shouldFedora(): Promise<void>;
-export function shouldFedoraLike(): Promise<void>;
-export function shouldOpenSUSE(): Promise<void>;
-export function shouldSlackware(): Promise<void>;
-export function shouldGentoo(): Promise<void>;
+export function shouldLinux(error?: any): void;
+export function shouldArch(error?: any): Promise<void>;
+export function shouldArchLike(error?: any): Promise<void>;
+export function shouldManjaro(error?: any): Promise<void>;
+export function shouldDebian(error?: any): Promise<void>;
+export function shouldDebianLike(error?: any): Promise<void>;
+export function shouldUbuntu(error?: any): Promise<void>;
+export function shouldUbuntuLike(error?: any): Promise<void>;
+export function shouldMint(error?: any): Promise<void>;
+export function shouldPopOS(error?: any): Promise<void>;
+export function shouldElementaryOS(error?: any): Promise<void>;
+export function shouldDeepin(error?: any): Promise<void>;
+export function shouldRaspberryPiOS(error?: any): Promise<void>;
+export function shouldRaspbian(error?: any): Promise<void>; //alias
+export function shouldFedora(error?: any): Promise<void>;
+export function shouldFedoraLike(error?: any): Promise<void>;
+export function shouldOpenSUSE(error?: any): Promise<void>;
+export function shouldSlackware(error?: any): Promise<void>;
+export function shouldGentoo(error?: any): Promise<void>;
 
-export function shouldGnome(): void;
-export function shouldKDE(): void;
-export function shouldXFCE(): void;
-export function shouldMate(): void;
-export function shouldCinnamon(): void;
+export function shouldGnome(error?: any): void;
+export function shouldKDE(error?: any): void;
+export function shouldXFCE(error?: any): void;
+export function shouldMate(error?: any): void;
+export function shouldCinnamon(error?: any): void;
 
-export function shouldWayland(): void;
+export function shouldWayland(error?: any): void;

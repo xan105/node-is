@@ -32,6 +32,8 @@ export function asBoolean(value: any): any;
   
 export function asBuffer(value: any): any;
 
+export function asError(value: any): any;
+
 export function asInteger(value: number): number | null;
 export function asIntegerPositive(value: number): number | null;
 export function asIntegerPositiveOrZero(value: number): number | null;

@@ -1,17 +1,17 @@
-export function shouldWindows(): void;
-export function shouldWindowsX86(): void;
-export function shouldWindowsX64(): void;
-export function shouldWin32(): void; //alias
-export function shouldWin64(): void; //alias
-export function shouldWin11orGreater(): void;
-export function shouldWin10orGreater(): void;
-export function shouldWin8orGreater(): void;
-export function shouldWin7orGreater(): void;
-export function shouldWin11orLesser(): void;
-export function shouldWin10orLesser(): void;
-export function shouldWin8orLesser(): void;
-export function shouldWin7orLesser(): void;
-export function shouldWin11(): void;
-export function shouldWin10(): void;
-export function shouldWin8(): void;
-export function shouldWin7(): void;
+export function shouldWindows(error?: any): void;
+export function shouldWindowsX86(error?: any): void;
+export function shouldWindowsX64(error?: any): void;
+export function shouldWin32(error?: any): void; //alias
+export function shouldWin64(error?: any): void; //alias
+export function shouldWin11orGreater(error?: any): void;
+export function shouldWin10orGreater(error?: any): void;
+export function shouldWin8orGreater(error?: any): void;
+export function shouldWin7orGreater(error?: any): void;
+export function shouldWin11orLesser(error?: any): void;
+export function shouldWin10orLesser(error?: any): void;
+export function shouldWin8orLesser(error?: any): void;
+export function shouldWin7orLesser(error?: any): void;
+export function shouldWin11(error?: any): void;
+export function shouldWin10(error?: any): void;
+export function shouldWin8(error?: any): void;
+export function shouldWin7(error?: any): void;
