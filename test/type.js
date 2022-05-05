@@ -134,11 +134,8 @@ t.end();
 
 t.test('number', t => { 
 
-t.ok(check.isInteger(Number.MAX_SAFE_INTEGER + 1, false), "isInteger()");
-t.ok(check.isInteger(Number.MAX_SAFE_INTEGER, false), "isInteger()");
-t.notOk(check.isInteger(Number.MAX_SAFE_INTEGER + 1, true), "isInteger()");
-t.ok(check.isInteger(Number.MAX_SAFE_INTEGER, true), "isInteger()");
-t.throws(function(){ check.isInteger(Number.MAX_SAFE_INTEGER, "true") }, "isInteger()");
+t.notOk(check.isInteger(Number.MAX_SAFE_INTEGER + 1), "isInteger()");
+t.ok(check.isInteger(Number.MAX_SAFE_INTEGER), "isInteger()");
 t.notOk(check.isInteger(0.2), "isInteger()");
 t.ok(check.isInteger(0), "isInteger()");
 t.ok(check.isInteger(-1), "isInteger()");
@@ -172,10 +169,8 @@ t.ok(check.isNumberWithinRange(1,0,1), "isNumberWithinRange()");
 t.notOk(check.isNumberWithinRange(-0.1,0,1), "isIntegerWithinRange()");
 
 //assert
-t.doesNotThrow(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER + 1, false) }, "shouldInteger()");
-t.doesNotThrow(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER, false) }, "shouldInteger()");
-t.throws(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER + 1, true) }, {code: "ERR_INVALID_ARG"}, "shouldInteger()");
-t.doesNotThrow(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER, true) }, "shouldInteger()");
+t.throws(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER + 1) }, {code: "ERR_INVALID_ARG"}, "shouldInteger()");
+t.doesNotThrow(function(){ assert.shouldInteger(Number.MAX_SAFE_INTEGER) }, "shouldInteger()");
 t.throws(function(){ assert.shouldInteger(0.2) }, {code: "ERR_INVALID_ARG"}, "shouldInteger()");
 t.doesNotThrow(function(){ assert.shouldInteger(0) }, "shouldInteger()");
 t.doesNotThrow(function(){ assert.shouldInteger(-1) }, "shouldInteger()");
@@ -213,8 +208,7 @@ t.throws(function(){ assert.shouldNumberWithinRange(-0.1,0,1) }, {code: "ERR_INV
 
 //as (fail only)
 
-t.equal(opt.asInteger(Number.MAX_SAFE_INTEGER + 1, true), null, "asInteger()");
-t.throws(function(){ opt.asInteger(Number.MAX_SAFE_INTEGER, "true") }, null, "asInteger()");
+t.equal(opt.asInteger(Number.MAX_SAFE_INTEGER + 1), null, "asInteger()");
 t.equal(opt.asInteger(0.2), null, "asInteger()");
 t.equal(opt.asInteger(1n), null, "asInteger()");
 t.equal(opt.asInteger(new Number(1)), null, "asInteger()");

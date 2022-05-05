@@ -122,14 +122,14 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 #### `isSizeArrayOfNumber(value: number[], length: number): boolean`
 #### `isArrayOfNumberWithinRange(value: number[], min: number, max: number): boolean`
 #### `isSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number): boolean`
-#### `isArrayOfInteger(value: number[], safe?: boolean): boolean`
-#### `isSizeArrayOfInteger(value: number[], length: number, safe?: boolean): boolean`
-#### `isArrayOfIntegerPositive(value: number[], safe?: boolean): boolean`
-#### `isSizeArrayOfIntegerPositive(value: number[], length: number, safe?: boolean): boolean`
-#### `isArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean): boolean`
-#### `isSizeArrayOfIntegerPositiveOrZero(value: number[], length: number, safe?: boolean): boolean`
-#### `isArrayOfIntegerWithinRange(value: number[], min: number, max: number, safe?: boolean): boolean`
-#### `isSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number, safe?: boolean): boolean`
+#### `isArrayOfInteger(value: number[]): boolean`
+#### `isSizeArrayOfInteger(value: number[], length: number): boolean`
+#### `isArrayOfIntegerPositive(value: number[]): boolean`
+#### `isSizeArrayOfIntegerPositive(value: number[], length: number): boolean`
+#### `isArrayOfIntegerPositiveOrZero(value: number[]): boolean`
+#### `isSizeArrayOfIntegerPositiveOrZero(value: number[], length: number): boolean`
+#### `isArrayOfIntegerWithinRange(value: number[], min: number, max: number): boolean`
+#### `isSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number): boolean`
 #### `isArrayOfObj(value: any): boolean`
 #### `isSizeArrayOfObj(value: any, length: number): boolean`
 #### `isArrayOfObjWithProperties(value: any, prop: string[]): boolean`
@@ -141,10 +141,10 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 #### `isBigIntPositive(value: BigInt): boolean`
 #### `isBigIntPositiveOrZero(value: BigInt): boolean`
 #### `isBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt): boolean`
-#### `isInteger(value: number, safe?: boolean): boolean`
-#### `isIntegerPositive(value: number, safe?: boolean): boolean`
-#### `isIntegerPositiveOrZero(value: number, safe?: boolean): boolean`
-#### `isIntegerWithinRange(value: number, min: number, max: number, safe?: boolean): boolean`
+#### `isInteger(value: number): boolean`
+#### `isIntegerPositive(value: number): boolean`
+#### `isIntegerPositiveOrZero(value: number): boolean`
+#### `isIntegerWithinRange(value: number, min: number, max: number): boolean`
 #### `isNumber(value: number): boolean`
 #### `isNumberWithinRange(value: number, min: number, max: number): boolean`
 
@@ -242,14 +242,14 @@ _This replace the cumbersome if(...) throw ..._
 #### `shouldSizeArrayOfNumber(value: number[], length: number): void`
 #### `shouldArrayOfNumberWithinRange(value: number[], min: number, max: number): void`
 #### `shouldSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number): void`
-#### `shouldArrayOfInteger(value: number[], safe?: boolean): void`
-#### `shouldSizeArrayOfInteger(value: number[], length: number, safe?: boolean): void`
-#### `shouldArrayOfIntegerPositive(value: number[], safe?: boolean): void`
-#### `shouldSizeArrayOfIntegerPositive(value: number[], length: number, safe?: boolean): void`
-#### `shouldArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean): void`
-#### `shouldSizeArrayOfIntegerPositiveOrZero(value: number[], length: number, safe?: boolean): void`
-#### `shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number, safe?: boolean): void`
-#### `shouldSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number, safe?: boolean): void`
+#### `shouldArrayOfInteger(value: number[]): void`
+#### `shouldSizeArrayOfInteger(value: number[], length: number): void`
+#### `shouldArrayOfIntegerPositive(value: number[]): void`
+#### `shouldSizeArrayOfIntegerPositive(value: number[], length: number): void`
+#### `shouldArrayOfIntegerPositiveOrZero(value: number[]): void`
+#### `shouldSizeArrayOfIntegerPositiveOrZero(value: number[], length: number): void`
+#### `shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number): void`
+#### `shouldSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number): void`
 #### `shouldArrayOfObj(value: any): void`
 #### `shouldSizeArrayOfObj(value: any, length: number): void`
 #### `shouldArrayOfObjWithProperties(value: any, prop: string[]): void`
@@ -261,10 +261,10 @@ _This replace the cumbersome if(...) throw ..._
 #### `shouldBigIntPositive(value: BigInt): void`
 #### `shouldBigIntPositiveOrZero(value: BigInt): void`
 #### `shouldBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt): void`
-#### `shouldInteger(value: number, safe?: boolean): void`
-#### `shouldIntegerPositive(value: number, safe?: boolean): void`
-#### `shouldIntegerPositiveOrZero(value: number, safe?: boolean): void`
-#### `shouldIntegerWithinRange(value: number, min: number, max: number, safe?: boolean): void`
+#### `shouldInteger(value: number): void`
+#### `shouldIntegerPositive(value: number): void`
+#### `shouldIntegerPositiveOrZero(value: number): void`
+#### `shouldIntegerWithinRange(value: number, min: number, max: number): void`
 #### `shouldNumber(value: number): void`
 #### `shouldNumberWithinRange(value: number, min: number, max: number): void`
 
@@ -355,14 +355,14 @@ function(option = {}){
 #### `asSizeArrayOfNumber(value: number[], length: number): number[] | null`
 #### `asArrayOfNumberWithinRange(value: number[], min: number, max: number): number[] | null`
 #### `asSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number): number[] | null`
-#### `asArrayOfInteger(value: number[], safe?: boolean): number[] | null`
-#### `asSizeArrayOfInteger(value: number[], length: number, safe?: boolean): number[] | null`
-#### `asArrayOfIntegerPositive(value: number[], safe?: boolean): number[] | null`
-#### `asSizeArrayOfIntegerPositive(value: number[], length: number, safe?: boolean): number[] | null`
-#### `asArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean): number[] | null`
-#### `asSizeArrayOfIntegerPositiveOrZero(value: number[], length: number, safe?: boolean): number[] | null`
-#### `asArrayOfIntegerWithinRange(value: number[], min: number, max: number, safe?: boolean): number[] | null`
-#### `asSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number, safe?: boolean): number[] | null`
+#### `asArrayOfInteger(value: number[]): number[] | null`
+#### `asSizeArrayOfInteger(value: number[], length: number): number[] | null`
+#### `asArrayOfIntegerPositive(value: number[]): number[] | null`
+#### `asSizeArrayOfIntegerPositive(value: number[], length: number): number[] | null`
+#### `asArrayOfIntegerPositiveOrZero(value: number[]): number[] | null`
+#### `asSizeArrayOfIntegerPositiveOrZero(value: number[], length: number): number[] | null`
+#### `asArrayOfIntegerWithinRange(value: number[], min: number, max: number): number[] | null`
+#### `asSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number): number[] | null`
 #### `asArrayOfObj(value: any): any`
 #### `asSizeArrayOfObj(value: any, length: number): any`
 #### `asArrayOfObjWithProperties(value: any, prop: string[]): any`
@@ -374,10 +374,10 @@ function(option = {}){
 #### `asBigIntPositive(value: BigInt): BigInt | null`
 #### `asBigIntPositiveOrZero(value: BigInt): BigInt | null`
 #### `asBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt): BigInt | null`
-#### `asInteger(value: number, safe?: boolean): number | null`
-#### `asIntegerPositive(value: number, safe?: boolean): number | null`
-#### `asIntegerPositiveOrZero(value: number, safe?: boolean): number | null`
-#### `asIntegerWithinRange(value: number, min: number, max: number, safe?: boolean): number | null`
+#### `asInteger(value: number): number | null`
+#### `asIntegerPositive(value: number): number | null`
+#### `asIntegerPositiveOrZero(value: number): number | null`
+#### `asIntegerWithinRange(value: number, min: number, max: number): number | null`
 #### `asNumber(value: number): number | null`
 #### `asNumberWithinRange(value: number, min: number, max: number): number | null`
 

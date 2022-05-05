@@ -8,14 +8,14 @@ export function asArrayOfNumber(value: number[]): number[] | null;
 export function asSizeArrayOfNumber(value: number[], length: number): number[] | null;
 export function asArrayOfNumberWithinRange(value: number[], min: number, max: number): number[] | null;
 export function asSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number): number[] | null;
-export function asArrayOfInteger(value: number[], safe?: boolean): number[] | null;
-export function asSizeArrayOfInteger(value: number[], length: number, safe?: boolean): number[] | null;
-export function asArrayOfIntegerPositive(value: number[], safe?: boolean): number[] | null;
-export function asSizeArrayOfIntegerPositive(value: number[], length: number, safe?: boolean): number[] | null;
-export function asArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean): number[] | null;
-export function asSizeArrayOfIntegerPositiveOrZero(value: number[], length: number, safe?: boolean): number[] | null;
-export function asArrayOfIntegerWithinRange(value: number[], min: number, max: number, safe?: boolean): number[] | null;
-export function asSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number, safe?: boolean): number[] | null;
+export function asArrayOfInteger(value: number[]): number[] | null;
+export function asSizeArrayOfInteger(value: number[], length: number): number[] | null;
+export function asArrayOfIntegerPositive(value: number[]): number[] | null;
+export function asSizeArrayOfIntegerPositive(value: number[], length: number): number[] | null;
+export function asArrayOfIntegerPositiveOrZero(value: number[]): number[] | null;
+export function asSizeArrayOfIntegerPositiveOrZero(value: number[], length: number): number[] | null;
+export function asArrayOfIntegerWithinRange(value: number[], min: number, max: number): number[] | null;
+export function asSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number): number[] | null;
 export function asArrayOfObj(value: any): any;
 export function asSizeArrayOfObj(value: any, length: number): any;
 export function asArrayOfObjWithProperties(value: any, prop: string[]): any;
@@ -32,10 +32,10 @@ export function asBoolean(value: any): any;
   
 export function asBuffer(value: any): any;
 
-export function asInteger(value: number, safe?: boolean): number | null;
-export function asIntegerPositive(value: number, safe?: boolean): number | null;
-export function asIntegerPositiveOrZero(value: number, safe?: boolean): number | null;
-export function asIntegerWithinRange(value: number, min: number, max: number, safe?: boolean): number | null;
+export function asInteger(value: number): number | null;
+export function asIntegerPositive(value: number): number | null;
+export function asIntegerPositiveOrZero(value: number): number | null;
+export function asIntegerWithinRange(value: number, min: number, max: number): number | null;
 export function asNumber(value: number): number | null;
 export function asNumberWithinRange(value: number, min: number, max: number): number | null;
 

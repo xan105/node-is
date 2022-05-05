@@ -8,14 +8,14 @@ export function shouldArrayOfNumber(value: number[]): void;
 export function shouldSizeArrayOfNumber(value: number[], length: number): void;
 export function shouldArrayOfNumberWithinRange(value: number[], min: number, max: number): void;
 export function shouldSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number): void;
-export function shouldArrayOfInteger(value: number[], safe?: boolean): void;
-export function shouldSizeArrayOfInteger(value: number[], length: number, safe?: boolean): void;
-export function shouldArrayOfIntegerPositive(value: number[], safe?: boolean): void;
-export function shouldSizeArrayOfIntegerPositive(value: number[], length: number, safe?: boolean): void;
-export function shouldArrayOfIntegerPositiveOrZero(value: number[], safe?: boolean): void;
-export function shouldSizeArrayOfIntegerPositiveOrZero(value: number[], length: number, safe?: boolean): void;
-export function shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number, safe?: boolean): void;
-export function shouldSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number, safe?: boolean): void;
+export function shouldArrayOfInteger(value: number[]): void;
+export function shouldSizeArrayOfInteger(value: number[], length: number): void;
+export function shouldArrayOfIntegerPositive(value: number[]): void;
+export function shouldSizeArrayOfIntegerPositive(value: number[], length: number): void;
+export function shouldArrayOfIntegerPositiveOrZero(value: number[]): void;
+export function shouldSizeArrayOfIntegerPositiveOrZero(value: number[], length: number): void;
+export function shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number): void;
+export function shouldSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number): void;
 export function shouldArrayOfObj(value: any): void;
 export function shouldSizeArrayOfObj(value: any, length: number): void;
 export function shouldArrayOfObjWithProperties(value: any, prop: string[]): void;
@@ -32,10 +32,10 @@ export function shouldBoolean(value: any): void;
   
 export function shouldBuffer(value: any): void;
 
-export function shouldInteger(value: number, safe?: boolean): void;
-export function shouldIntegerPositive(value: number, safe?: boolean): void;
-export function shouldIntegerPositiveOrZero(value: number, safe?: boolean): void;
-export function shouldIntegerWithinRange(value: number, min: number, max: number, safe?: boolean): void;
+export function shouldInteger(value: number): void;
+export function shouldIntegerPositive(value: number): void;
+export function shouldIntegerPositiveOrZero(value: number): void;
+export function shouldIntegerWithinRange(value: number, min: number, max: number): void;
 export function shouldNumber(value: number): void;
 export function shouldNumberWithinRange(value: number, min: number, max: number): void;
 
