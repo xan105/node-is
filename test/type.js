@@ -2,6 +2,7 @@ import t from 'tap';
 import { Buffer } from "node:buffer";
 import * as check from "../lib/index.js";
 import { assert, opt } from "../lib/index.js";
+import { Failure } from "@xan105/error";
 
 t.test('array', t => { 
 
@@ -396,6 +397,39 @@ t.equal(opt.asBoolean({foo: "bar"}), null, "as boolean");
 t.equal(opt.asBoolean(new Boolean(true)), null, "as boolean");
 t.equal(opt.asBoolean(null), null, "as boolean");
 t.equal(opt.asBoolean(undefined), null, "as boolean");
+
+t.end();
+});
+
+t.test('constructor', t => {
+
+t.ok(check.isError(new Error()), "Error");
+t.ok(check.isError(new Error("")), "Error");
+t.ok(check.isError(new Error("some error")), "Error");
+t.ok(check.isError(new Failure()), "Error");
+t.ok(check.isError(new Failure("")), "Error");
+t.ok(check.isError(new Failure("some error")), "Error");
+t.notOk(check.isError(() => {}), "Error");
+t.notOk(check.isError({}), "Error");
+t.notOk(check.isError(""), "Error");
+
+//assert
+
+t.doesNotThrow(function(){ assert.shouldError(new Error()) }, "Error");
+t.doesNotThrow(function(){ assert.shouldError(new Error("")) }, "Error");
+t.doesNotThrow(function(){ assert.shouldError(new Error("some error")) }, "Error");
+t.doesNotThrow(function(){ assert.shouldError(new Failure()) }, "Error");
+t.doesNotThrow(function(){ assert.shouldError(new Failure("")) }, "Error");
+t.doesNotThrow(function(){ assert.shouldError(new Failure("some error")) }, "Error");
+t.throws(function(){ assert.shouldError(() => {}) }, {code: "ERR_INVALID_ARG"}, "Error");
+t.throws(function(){ assert.shouldError({}) }, {code: "ERR_INVALID_ARG"}, "Error");
+t.throws(function(){ assert.shouldError("") }, {code: "ERR_INVALID_ARG"}, "Error");
+
+//as (fail only)
+
+t.equal(opt.asError(() => {}), null, "Error");
+t.equal(opt.asError({}), null, "Error");
+t.equal(opt.asError(""), null, "Error");
 
 t.end();
 });
