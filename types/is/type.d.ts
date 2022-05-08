@@ -20,6 +20,8 @@ export function isArrayOfObj(value: any): boolean;
 export function isSizeArrayOfObj(value: any, length: number): boolean;
 export function isArrayOfObjWithProperties(value: any, prop: string[]): boolean;
 export function isSizeArrayOfObjWithProperties(value: any, length: number, prop: string[]): boolean;
+export function isArrayOfObjLike(value: any, schema: Object): boolean;
+export function isSizeArrayOfObjLike(value: any, length: number, schema: Object): boolean;
 export function isArrayOfBuffer(value: any): boolean;
 export function isSizeArrayOfBuffer(value: any, length: number): boolean;
 
@@ -44,6 +46,7 @@ export function isNumberWithinRange(value: number, min: number, max: number): bo
 export function isObj(value: any): boolean;
 export function isObjNotEmpty(value: any): boolean;
 export function isObjWithProperties(value: any, prop: string[]): boolean;
+export function isObjLike(value: any, schema: Object): boolean;
 
 export function isString(value: any): boolean;
 export function isStringNotEmpty(value: string): boolean;

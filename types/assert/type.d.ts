@@ -20,6 +20,8 @@ export function shouldArrayOfObj(value: any, error?: any): void;
 export function shouldSizeArrayOfObj(value: any, length: number, error?: any): void;
 export function shouldArrayOfObjWithProperties(value: any, prop: string[], error?: any): void;
 export function shouldSizeArrayOfObjWithProperties(value: any, length: number, prop: string[], error?: any): void;
+export function shouldArrayOfObjLike(value: any, schema: Object): void;
+export function shouldSizeArrayOfObjLike(value: any, length: number, schema: Object): void;
 export function shouldArrayOfBuffer(value: any, error?: any): void;
 export function shouldSizeArrayOfBuffer(value: any, length: number, error?: any): void;
 
@@ -44,6 +46,7 @@ export function shouldNumberWithinRange(value: number, min: number, max: number,
 export function shouldObj(value: any, error?: any): void;
 export function shouldObjNotEmpty(value: any, error?: any): void;
 export function shouldObjWithProperties(value: any, prop: string[], error?: any): void;
+export function shouldObjLike(value: any, schema: Object): void;
 
 export function shouldString(value: any, error?: any): void;
 export function shouldStringNotEmpty(value: string, error?: any): void;

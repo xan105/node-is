@@ -134,6 +134,8 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 #### `isSizeArrayOfObj(value: any, length: number): boolean`
 #### `isArrayOfObjWithProperties(value: any, prop: string[]): boolean`
 #### `isSizeArrayOfObjWithProperties(value: any, length: number, prop: string[]): boolean`
+#### `isArrayOfObjLike(value: any, schema: Object): boolean`
+#### `isSizeArrayOfObjLike(value: any, length: number, schema: Object): boolean`
 #### `isArrayOfBuffer(value: any): boolean`
 #### `isSizeArrayOfBuffer(value: any, length: number): boolean`
 
@@ -154,6 +156,48 @@ as in a "plain obj" and not a JS obj so {}, new Object() and Object.create(null)
 
 #### `isObjNotEmpty(value: any): boolean`
 #### `isObjWithProperties(value: any, prop: string[]): boolean`
+#### `isObjLike(value: any, schema: obj): boolean`
+
+Check if an obj is like the specified schema.<br/>
+Where schema is an obj containing a set of required property name and its corresponding _check_ function.<br/>
+If the obj has these properties and they are validated by said corresponding function then this will return true otherwise false. 
+
+<details><summary>Example:</summary>
+
+```js
+const persona = {
+  name: "Xan",
+  age: 26,
+  child: {
+    name: "Xanette",
+    age: 15,
+    height: 164,
+    weight: 42
+  }
+};
+
+isObjLike(persona,{
+  name: isString,
+  age: isNumber,
+  child: {
+    name: isStringNotEmpty,
+    age: [ isIntegerWithinRange, [0,100] ],
+    height: isNumber,
+    weight: [ isNumber, [] ]
+  }
+});
+```
+
+</details>
+
+The check funtion should only return a **boolean**.<br/>
+**Otherwise** or if the function throws then **false** will be assumed.<br/>
+_NB: Function that use [@xan105/error](https://github.com/xan105/node-error) will bypass this and still throw (this is by design)._
+
+The check funtion should be defined as follow: `something: [function, [args,...] ]`<br/>
+If you don't have any args then an empty array: `something: [function, [] ]`<br/>
+Or you can pass the function as is (shortcut): `something: function`<br/>
+Note that `something: [function]` is invalid !
 
 #### `isString(value: any): boolean`
 #### `isStringNotEmpty(value: string): boolean`
@@ -257,6 +301,8 @@ _This replace the cumbersome if(...) throw ..._
 #### `shouldSizeArrayOfObj(value: any, length: number, error?: any): void`
 #### `shouldArrayOfObjWithProperties(value: any, prop: string[], error?: any): void`
 #### `shouldSizeArrayOfObjWithProperties(value: any, length: number, prop: string[], error?: any): void`
+#### `shouldArrayOfObjLike(value: any, schema: Object): void`
+#### `shouldSizeArrayOfObjLike(value: any, length: number, schema: Object): void`
 #### `shouldArrayOfBuffer(value: any, error?: any): void`
 #### `shouldSizeArrayOfBuffer(value: any, length: number, error?: any): void`
 
@@ -274,6 +320,7 @@ _This replace the cumbersome if(...) throw ..._
 #### `shouldObj(value: any, error?: any): void`
 #### `shouldObjNotEmpty(value: any, error?: any): void`
 #### `shouldObjWithProperties(value: any, prop: string[], error?: any): void`
+#### `shouldObjLike(value: any, schema: Object): void`
 
 #### `shouldString(value: any, error?: any): void`
 #### `shouldStringNotEmpty(value: string, error?: any): void`
@@ -371,6 +418,8 @@ function(option = {}){
 #### `asSizeArrayOfObj(value: any, length: number): any`
 #### `asArrayOfObjWithProperties(value: any, prop: string[]): any`
 #### `asSizeArrayOfObjWithProperties(value: any, length: number, prop: string[]): any`
+#### `asArrayOfObjLike(value: any, schema: Object): any`
+#### `asSizeArrayOfObjLike(value: any, length: number, schema: Object): any`
 #### `asArrayOfBuffer(value: any): any`
 #### `asSizeArrayOfBuffer(value: any, length: number): any`
 
@@ -388,6 +437,7 @@ function(option = {}){
 #### `asObj(value: any): any`
 #### `asObjNotEmpty(value: any): any`
 #### `asObjWithProperties(value: any, prop: string[]): any`
+#### `asObjLike(value: any, schema: Object): any`
 
 #### `asString(value: any): any`
 #### `asStringNotEmpty(value: string): string | null`

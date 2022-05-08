@@ -20,6 +20,8 @@ export function asArrayOfObj(value: any): any;
 export function asSizeArrayOfObj(value: any, length: number): any;
 export function asArrayOfObjWithProperties(value: any, prop: string[]): any;
 export function asSizeArrayOfObjWithProperties(value: any, length: number, prop: string[]): any;
+export function asArrayOfObjLike(value: any, schema: Object): any;
+export function asSizeArrayOfObjLike(value: any, length: number, schema: Object): any;
 export function asArrayOfBuffer(value: any): any;
 export function asSizeArrayOfBuffer(value: any, length: number): any;
 
@@ -44,6 +46,7 @@ export function asNumberWithinRange(value: number, min: number, max: number): nu
 export function asObj(value: any): any;
 export function asObjNotEmpty(value: any): any;
 export function asObjWithProperties(value: any, prop: string[]): any;
+export function asObjLike(value: any, schema: Object): any;
 
 export function asString(value: any): any;
 export function asStringNotEmpty(value: string): string | null;
