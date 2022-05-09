@@ -264,122 +264,123 @@ _Perform the same checks as above but throw an error instead._<br/>
 _This replace the cumbersome if(...) throw ..._
 
 💡 Every assertion has an optional `error` parameter to override the default Error throwned.
+You can either use an instance of Error or a string to just change the default message.
 
-#### `should64bit (filePath: string, error?: any): Promise<void>`
-#### `should32bit (filePath: string, error?: any): Promise<void>`
+#### `should64bit (filePath: string, error?: string | Object): Promise<void>`
+#### `should32bit (filePath: string, error?: string | Object): Promise<void>`
 
-#### `shouldPNG(filePath: string, error?: any): Promise<void>`
-#### `shouldJPG(filePath: string, error?: any): Promise<void>`
-#### `shouldICO(filePath: string, error?: any): Promise<void>`
-#### `shouldGIF(filePath: string, error?: any): Promise<void>`
-#### `shouldWEBP(filePath: string, error?: any): Promise<void>`
-#### `shouldQOI(filePath: string, error?: any): Promise<void>`
+#### `shouldPNG(filePath: string, error?: string | Object): Promise<void>`
+#### `shouldJPG(filePath: string, error?: string | Object): Promise<void>`
+#### `shouldICO(filePath: string, error?: string | Object): Promise<void>`
+#### `shouldGIF(filePath: string, error?: string | Object): Promise<void>`
+#### `shouldWEBP(filePath: string, error?: string | Object): Promise<void>`
+#### `shouldQOI(filePath: string, error?: string | Object): Promise<void>`
 
-#### `shouldIP(value: string, error?: any): void`
-#### `shouldIPv4(value: string, error?: any): void`
-#### `shouldIPv6(value: string, error?: any): void`
+#### `shouldIP(value: string, error?: string | Object): void`
+#### `shouldIPv4(value: string, error?: string | Object): void`
+#### `shouldIPv6(value: string, error?: string | Object): void`
 
-#### `shouldArray(value: any, error?: any): void`
-#### `shouldArrayNotEmpty(value: any, error?: any): void`
-#### `shouldArrayOfString(value: string[], error?: any): void`
-#### `shouldSizeArrayOfString(value: string[], length: number, error?: any): void`
-#### `shouldArrayOfStringNotEmpty(value: string[], error?: any): void`
-#### `shouldSizeArrayOfStringNotEmpty(value: string[], length: number, error?: any): void`
-#### `shouldArrayOfNumber(value: number[], error?: any): void`
-#### `shouldSizeArrayOfNumber(value: number[], length: number, error?: any): void`
-#### `shouldArrayOfNumberWithinRange(value: number[], min: number, max: number, error?: any): void`
-#### `shouldSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number, error?: any): void`
-#### `shouldArrayOfInteger(value: number[], error?: any): void`
-#### `shouldSizeArrayOfInteger(value: number[], length: number, error?: any): void`
-#### `shouldArrayOfIntegerPositive(value: number[], error?: any): void`
-#### `shouldSizeArrayOfIntegerPositive(value: number[], length: number, error?: any): void`
-#### `shouldArrayOfIntegerPositiveOrZero(value: number[], error?: any): void`
-#### `shouldSizeArrayOfIntegerPositiveOrZero(value: number[], length: number, error?: any): void`
-#### `shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number, error?: any): void`
-#### `shouldSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number, error?: any): void`
-#### `shouldArrayOfObj(value: any, error?: any): void`
-#### `shouldSizeArrayOfObj(value: any, length: number, error?: any): void`
-#### `shouldArrayOfObjWithProperties(value: any, prop: string[], error?: any): void`
-#### `shouldSizeArrayOfObjWithProperties(value: any, length: number, prop: string[], error?: any): void`
+#### `shouldArray(value: any, error?: string | Object): void`
+#### `shouldArrayNotEmpty(value: any, error?: string | Object): void`
+#### `shouldArrayOfString(value: string[], error?: string | Object): void`
+#### `shouldSizeArrayOfString(value: string[], length: number, error?: string | Object): void`
+#### `shouldArrayOfStringNotEmpty(value: string[], error?: string | Object): void`
+#### `shouldSizeArrayOfStringNotEmpty(value: string[], length: number, error?: string | Object): void`
+#### `shouldArrayOfNumber(value: number[], error?: string | Object): void`
+#### `shouldSizeArrayOfNumber(value: number[], length: number, error?: string | Object): void`
+#### `shouldArrayOfNumberWithinRange(value: number[], min: number, max: number, error?: string | Object): void`
+#### `shouldSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number, error?: string | Object): void`
+#### `shouldArrayOfInteger(value: number[], error?: string | Object): void`
+#### `shouldSizeArrayOfInteger(value: number[], length: number, error?: string | Object): void`
+#### `shouldArrayOfIntegerPositive(value: number[], error?: string | Object): void`
+#### `shouldSizeArrayOfIntegerPositive(value: number[], length: number, error?: string | Object): void`
+#### `shouldArrayOfIntegerPositiveOrZero(value: number[], error?: string | Object): void`
+#### `shouldSizeArrayOfIntegerPositiveOrZero(value: number[], length: number, error?: string | Object): void`
+#### `shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number, error?: string | Object): void`
+#### `shouldSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number, error?: string | Object): void`
+#### `shouldArrayOfObj(value: any, error?: string | Object): void`
+#### `shouldSizeArrayOfObj(value: any, length: number, error?: string | Object): void`
+#### `shouldArrayOfObjWithProperties(value: any, prop: string[], error?: string | Object): void`
+#### `shouldSizeArrayOfObjWithProperties(value: any, length: number, prop: string[], error?: string | Object): void`
 #### `shouldArrayOfObjLike(value: any, schema: Object): void`
 #### `shouldSizeArrayOfObjLike(value: any, length: number, schema: Object): void`
-#### `shouldArrayOfBuffer(value: any, error?: any): void`
-#### `shouldSizeArrayOfBuffer(value: any, length: number, error?: any): void`
+#### `shouldArrayOfBuffer(value: any, error?: string | Object): void`
+#### `shouldSizeArrayOfBuffer(value: any, length: number, error?: string | Object): void`
 
-#### `shouldBigInt(value: any, error?: any): void`
-#### `shouldBigIntPositive(value: BigInt, error?: any): void`
-#### `shouldBigIntPositiveOrZero(value: BigInt, error?: any): void`
-#### `shouldBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt, error?: any): void`
-#### `shouldInteger(value: number, error?: any): void`
-#### `shouldIntegerPositive(value: number, error?: any): void`
-#### `shouldIntegerPositiveOrZero(value: number, error?: any): void`
-#### `shouldIntegerWithinRange(value: number, min: number, max: number, error?: any): void`
-#### `shouldNumber(value: number, error?: any): void`
-#### `shouldNumberWithinRange(value: number, min: number, max: number, error?: any): void`
+#### `shouldBigInt(value: any, error?: string | Object): void`
+#### `shouldBigIntPositive(value: BigInt, error?: string | Object): void`
+#### `shouldBigIntPositiveOrZero(value: BigInt, error?: string | Object): void`
+#### `shouldBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt, error?: string | Object): void`
+#### `shouldInteger(value: number, error?: string | Object): void`
+#### `shouldIntegerPositive(value: number, error?: string | Object): void`
+#### `shouldIntegerPositiveOrZero(value: number, error?: string | Object): void`
+#### `shouldIntegerWithinRange(value: number, min: number, max: number, error?: string | Object): void`
+#### `shouldNumber(value: number, error?: string | Object): void`
+#### `shouldNumberWithinRange(value: number, min: number, max: number, error?: string | Object): void`
 
-#### `shouldObj(value: any, error?: any): void`
-#### `shouldObjNotEmpty(value: any, error?: any): void`
-#### `shouldObjWithProperties(value: any, prop: string[], error?: any): void`
+#### `shouldObj(value: any, error?: string | Object): void`
+#### `shouldObjNotEmpty(value: any, error?: string | Object): void`
+#### `shouldObjWithProperties(value: any, prop: string[], error?: string | Object): void`
 #### `shouldObjLike(value: any, schema: Object): void`
 
-#### `shouldString(value: any, error?: any): void`
-#### `shouldStringNotEmpty(value: string, error?: any): void`
-#### `shouldHexString(value: string, error?: any): void`
-#### `shouldBoolean(value: any, error?: any): void`
-#### `shouldBuffer(value: any, error?: any): void`
-#### `shouldError(value: any, error?: any): void`
+#### `shouldString(value: any, error?: string | Object): void`
+#### `shouldStringNotEmpty(value: string, error?: string | Object): void`
+#### `shouldHexString(value: string, error?: string | Object): void`
+#### `shouldBoolean(value: any, error?: string | Object): void`
+#### `shouldBuffer(value: any, error?: string | Object): void`
+#### `shouldError(value: any, error?: string | Object): void`
 
-#### `shouldWindows(error?: any): void`
-#### `shouldWindowsX86(error?: any): void`
+#### `shouldWindows(error?: string | Object): void`
+#### `shouldWindowsX86(error?: string | Object): void`
 
-alias: `shouldWin32(error?: any): void`
+alias: `shouldWin32(error?: string | Object): void`
 
-#### `shouldWindowsX64(error?: any): void`
+#### `shouldWindowsX64(error?: string | Object): void`
 
-alias: `shouldWin64(error?: any): void`
+alias: `shouldWin64(error?: string | Object): void`
 
-#### `shouldWin11orGreater(error?: any): void`
-#### `shouldWin10orGreater(error?: any): void`
-#### `shouldWin8orGreater(error?: any): void`
-#### `shouldWin7orGreater(error?: any): void`
-#### `shouldWin11orLesser(error?: any): void`
-#### `shouldWin10orLesser(error?: any): void`
-#### `shouldWin8orLesser(error?: any): void`
-#### `shouldWin7orLesser(error?: any): void`
-#### `shouldWin11(error?: any): void`
-#### `shouldWin10(error?: any): void`
-#### `shouldWin8(error?: any): void`
-#### `shouldWin7(error?: any): void`
+#### `shouldWin11orGreater(error?: string | Object): void`
+#### `shouldWin10orGreater(error?: string | Object): void`
+#### `shouldWin8orGreater(error?: string | Object): void`
+#### `shouldWin7orGreater(error?: string | Object): void`
+#### `shouldWin11orLesser(error?: string | Object): void`
+#### `shouldWin10orLesser(error?: string | Object): void`
+#### `shouldWin8orLesser(error?: string | Object): void`
+#### `shouldWin7orLesser(error?: string | Object): void`
+#### `shouldWin11(error?: string | Object): void`
+#### `shouldWin10(error?: string | Object): void`
+#### `shouldWin8(error?: string | Object): void`
+#### `shouldWin7(error?: string | Object): void`
 
-#### `shouldLinux(error?: any): void`
-#### `shouldArch(error?: any): Promise<void>`
-#### `shouldArchLike(error?: any): Promise<void>`
-#### `shouldManjaro(error?: any): Promise<void>`
-#### `shouldDebian(error?: any): Promise<void>`
-#### `shouldDebianLike(error?: any): Promise<void>`
-#### `shouldUbuntu(error?: any): Promise<void>`
-#### `shouldUbuntuLike(error?: any): Promise<void>`
-#### `shouldMint(error?: any): Promise<void>`
-#### `shouldPopOS(error?: any): Promise<void>`
-#### `shouldElementaryOS(error?: any): Promise<void>`
-#### `shouldDeepin(error?: any): Promise<void>`
-#### `shouldRaspberryPiOS(error?: any): Promise<void>`
+#### `shouldLinux(error?: string | Object): void`
+#### `shouldArch(error?: string | Object): Promise<void>`
+#### `shouldArchLike(error?: string | Object): Promise<void>`
+#### `shouldManjaro(error?: string | Object): Promise<void>`
+#### `shouldDebian(error?: string | Object): Promise<void>`
+#### `shouldDebianLike(error?: string | Object): Promise<void>`
+#### `shouldUbuntu(error?: string | Object): Promise<void>`
+#### `shouldUbuntuLike(error?: string | Object): Promise<void>`
+#### `shouldMint(error?: string | Object): Promise<void>`
+#### `shouldPopOS(error?: string | Object): Promise<void>`
+#### `shouldElementaryOS(error?: string | Object): Promise<void>`
+#### `shouldDeepin(error?: string | Object): Promise<void>`
+#### `shouldRaspberryPiOS(error?: string | Object): Promise<void>`
 
-alias: `shouldRaspbian(error?: any): Promise<void>`
+alias: `shouldRaspbian(error?: string | Object): Promise<void>`
 
-#### `shouldFedora(error?: any): Promise<void>`
-#### `shouldFedoraLike(error?: any): Promise<void>`
-#### `shouldOpenSUSE(error?: any): Promise<void>`
-#### `shouldSlackware(error?: any): Promise<void>`
-#### `shouldGentoo(error?: any): Promise<void>`
+#### `shouldFedora(error?: string | Object): Promise<void>`
+#### `shouldFedoraLike(error?: string | Object): Promise<void>`
+#### `shouldOpenSUSE(error?: string | Object): Promise<void>`
+#### `shouldSlackware(error?: string | Object): Promise<void>`
+#### `shouldGentoo(error?: string | Object): Promise<void>`
 
-#### `shouldGnome(error?: any): void`
-#### `shouldKDE(error?: any): void`
-#### `shouldXFCE(error?: any): void`
-#### `shouldMate(error?: any): void`
-#### `shouldCinnamon(error?: any): void`
+#### `shouldGnome(error?: string | Object): void`
+#### `shouldKDE(error?: string | Object): void`
+#### `shouldXFCE(error?: string | Object): void`
+#### `shouldMate(error?: string | Object): void`
+#### `shouldCinnamon(error?: string | Object): void`
 
-#### `shouldWayland(error?: any): void`
+#### `shouldWayland(error?: string | Object): void`
 
 ### opt
 
