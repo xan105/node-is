@@ -48,6 +48,29 @@ check.isArrayOfString(["a","b"]);
 //etc...
 ```
 
+Check Object like
+```js
+import { isObjLike, isString, isNumber } from "@xan105/is";
+
+const family = {
+  name: "Xan",
+  age: 26,
+  child: {
+    name: "Xanette",
+    age: 15
+  }
+};
+
+isObjLike(family,{
+  name: isString,
+  age: isNumber,
+  child: {
+    name: isString,
+    age: isNumber
+  }
+});
+```
+
 ### Assertion
 _Perform the same check but throw an error instead._
 
@@ -165,7 +188,7 @@ If the obj has these properties and they are validated by said corresponding fun
 <details><summary>Example:</summary>
 
 ```js
-const persona = {
+const family = {
   name: "Xan",
   age: 26,
   child: {
@@ -176,7 +199,7 @@ const persona = {
   }
 };
 
-isObjLike(persona,{
+isObjLike(family,{
   name: isString,
   age: isNumber,
   child: {
