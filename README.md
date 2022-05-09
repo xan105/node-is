@@ -83,8 +83,8 @@ shouldWin10orGreater();
 import { assert } from "@xan105/is";
 
 assert.shouldStringNotEmpty("hello world");
-assert.shouldIntegerWithinRange(1,0,2);
-assert.shouldArrayOfString(["a","b"]);
+assert.shouldIntegerWithinRange(1,0,2, "Custom error message");
+assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }));
 //etc...
 ```
 
@@ -286,7 +286,7 @@ alias: `isRaspbian(): Promise<boolean>`
 _Perform the same checks as above but throw an error instead._<br/>
 _This replace the cumbersome if(...) throw ..._
 
-💡 Every assertion has an optional `error` parameter to override the default Error throwned.
+💡 Every assertion has an optional `error` parameter to override the default Error throwned.<br/>
 You can either use an instance of Error or a string to just change the default message.
 
 #### `should64bit (filePath: string, error?: string | Object): Promise<void>`
