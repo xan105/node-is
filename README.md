@@ -135,14 +135,6 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
   
 </details>
 
-<details><summary>misc</summary>
-  
-#### `isIP(value: string): boolean`
-#### `isIPv4(value: string): boolean`
-#### `isIPv6(value: string): boolean`
-  
-</details>
-
 <details><summary>type: array</summary>
 
 #### `isArray(value: any): boolean`
@@ -318,6 +310,14 @@ alias: `isRaspbian(): Promise<boolean>`
   
 </details>
 
+<details><summary>misc</summary>
+  
+#### `isIP(value: string): boolean`
+#### `isIPv4(value: string): boolean`
+#### `isIPv6(value: string): boolean`
+  
+</details>
+  
 ### assert
 
 _Perform the same checks as above but throw an error instead._<br/>
@@ -329,6 +329,13 @@ You can either use
 - an instance of/inherit from the `Error` class 
 - or a string to just change the default message.
 
+eg: 
+  
+```js
+assert.shouldIntegerWithinRange(1,0,2, "Custom error message");
+assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }));
+```
+  
 <details><summary>binary</summary>
   
 #### `should64bit (filePath: string, error?: string | object): Promise<void>`
@@ -339,14 +346,6 @@ You can either use
 #### `shouldGIF(filePath: string, error?: string | object): Promise<void>`
 #### `shouldWEBP(filePath: string, error?: string | object): Promise<void>`
 #### `shouldQOI(filePath: string, error?: string | object): Promise<void>`
-  
-</details>
-  
-<details><summary>misc</summary>
-
-#### `shouldIP(value: string, error?: string | object): void`
-#### `shouldIPv4(value: string, error?: string | object): void`
-#### `shouldIPv6(value: string, error?: string | object): void`
   
 </details>
 
@@ -478,6 +477,14 @@ alias: `shouldRaspbian(error?: string | object): Promise<void>`
 #### `shouldCinnamon(error?: string | object): void`
 
 #### `shouldWayland(error?: string | object): void`
+  
+</details>
+  
+<details><summary>misc</summary>
+
+#### `shouldIP(value: string, error?: string | object): void`
+#### `shouldIPv4(value: string, error?: string | object): void`
+#### `shouldIPv6(value: string, error?: string | object): void`
   
 </details>
   
