@@ -114,6 +114,15 @@ API
 
 ⚠️ This module is only available as an ECMAScript module (ESM)<br />
 
+💡 `assert` and `opt` are under their respective namespace.
+```js
+import { assert } from "@xan105/is";
+assert.shouldWin10orGreater();
+
+import { shouldWin10orGreater } from "@xan105/is/assert";
+shouldWin10orGreater();
+```
+
 ## Named export
 
 <details><summary>binary</summary>
