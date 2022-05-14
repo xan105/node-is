@@ -116,6 +116,8 @@ API
 
 ## Named export
 
+<details><summary>binary</summary>
+  
 #### `is64bit(filePath: string): Promise<boolean>`
 
 Check if it's a 64-bits (x86_64) Windows or Linux binary.<br />
@@ -130,10 +132,18 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 #### `isGIF(filePath: string): Promise<boolean>`
 #### `isWEBP(filePath: string): Promise<boolean>`
 #### `isQOI(filePath: string): Promise<boolean>`
+  
+</details>
 
+<details><summary>misc</summary>
+  
 #### `isIP(value: string): boolean`
 #### `isIPv4(value: string): boolean`
 #### `isIPv6(value: string): boolean`
+  
+</details>
+
+<details><summary>type: array</summary>
 
 #### `isArray(value: any): boolean`
 #### `isArrayNotEmpty(value: any): boolean`
@@ -161,7 +171,11 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 #### `isSizeArrayOfObjLike(value: any, length: number, schema: object): boolean`
 #### `isArrayOfBuffer(value: any): boolean`
 #### `isSizeArrayOfBuffer(value: any, length: number): boolean`
+  
+</details>  
 
+<details><summary>type: number</summary>
+  
 #### `isBigInt(value: any): boolean`
 #### `isBigIntPositive(value: BigInt): boolean`
 #### `isBigIntPositiveOrZero(value: BigInt): boolean`
@@ -172,6 +186,10 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 #### `isIntegerWithinRange(value: number, min: number, max: number): boolean`
 #### `isNumber(value: number): boolean`
 #### `isNumberWithinRange(value: number, min: number, max: number): boolean`
+  
+</details>
+
+<details><summary>type: object</summary>
 
 #### `isObj(value: any): boolean`
 
@@ -221,13 +239,26 @@ The check funtion should be defined as follow: `something: [function, [args,...]
 If you don't have any args then an empty array: `something: [function, [] ]`<br/>
 Or you can pass the function as is (shortcut): `something: function`<br/>
 Note that `something: [function]` is invalid !
+  
+</details>
 
+<details><summary>type: string</summary>
+  
 #### `isString(value: any): boolean`
 #### `isStringNotEmpty(value: string): boolean`
 #### `isHexString(value: string): boolean`
+  
+</details>
+
+<details><summary>type: other</summary>
+  
 #### `isBoolean(value: any): boolean`  
 #### `isBuffer(value: any): boolean`
 #### `isError(value: any): boolean`
+  
+</details>
+
+<details><summary>os: Windows</summary>
 
 #### `isWindows(): boolean`
 #### `isWindowsX86(): boolean`
@@ -250,7 +281,11 @@ alias: `isWin64(): boolean`
 #### `isWin10(): boolean`
 #### `isWin8(): boolean`
 #### `isWin7(): boolean`
-
+  
+</details>
+  
+<details><summary>os: Linux</summary>
+  
 #### `isLinux(): boolean`
 #### `isArch(): Promise<boolean>`
 #### `isArchLike(): Promise<boolean>`
@@ -280,29 +315,43 @@ alias: `isRaspbian(): Promise<boolean>`
 #### `isCinnamon(): boolean`
 
 #### `isWayland(): boolean`
+  
+</details>
 
 ### assert
 
 _Perform the same checks as above but throw an error instead._<br/>
 _This replace the cumbersome if(...) throw ..._
 
-💡 Every assertion has an optional `error` parameter to override the default Error throwned.<br/>
-You can either use an instance of Error or a string to just change the default message.
+💡 Every assertion has an optional `error` parameter to override the default Error.<br/>
+You can either use
+  
+- an instance of/inherit from the `Error` class 
+- or a string to just change the default message.
 
+<details><summary>binary</summary>
+  
 #### `should64bit (filePath: string, error?: string | object): Promise<void>`
 #### `should32bit (filePath: string, error?: string | object): Promise<void>`
-
 #### `shouldPNG(filePath: string, error?: string | object): Promise<void>`
 #### `shouldJPG(filePath: string, error?: string | object): Promise<void>`
 #### `shouldICO(filePath: string, error?: string | object): Promise<void>`
 #### `shouldGIF(filePath: string, error?: string | object): Promise<void>`
 #### `shouldWEBP(filePath: string, error?: string | object): Promise<void>`
 #### `shouldQOI(filePath: string, error?: string | object): Promise<void>`
+  
+</details>
+  
+<details><summary>misc</summary>
 
 #### `shouldIP(value: string, error?: string | object): void`
 #### `shouldIPv4(value: string, error?: string | object): void`
 #### `shouldIPv6(value: string, error?: string | object): void`
+  
+</details>
 
+<details><summary>type: array</summary>
+  
 #### `shouldArray(value: any, error?: string | object): void`
 #### `shouldArrayNotEmpty(value: any, error?: string | object): void`
 #### `shouldArrayOfString(value: string[], error?: string | object): void`
@@ -329,6 +378,10 @@ You can either use an instance of Error or a string to just change the default m
 #### `shouldSizeArrayOfObjLike(value: any, length: number, schema: object): void`
 #### `shouldArrayOfBuffer(value: any, error?: string | object): void`
 #### `shouldSizeArrayOfBuffer(value: any, length: number, error?: string | object): void`
+  
+</details>
+ 
+<details><summary>type: number</summary>
 
 #### `shouldBigInt(value: any, error?: string | object): void`
 #### `shouldBigIntPositive(value: BigInt, error?: string | object): void`
@@ -340,19 +393,36 @@ You can either use an instance of Error or a string to just change the default m
 #### `shouldIntegerWithinRange(value: number, min: number, max: number, error?: string | object): void`
 #### `shouldNumber(value: number, error?: string | object): void`
 #### `shouldNumberWithinRange(value: number, min: number, max: number, error?: string | object): void`
+  
+</details>
+
+<details><summary>type: object</summary>
 
 #### `shouldObj(value: any, error?: string | object): void`
 #### `shouldObjNotEmpty(value: any, error?: string | object): void`
 #### `shouldObjWithProperties(value: any, prop: string[], error?: string | object): void`
 #### `shouldObjLike(value: any, schema: object): void`
+  
+</details>
+
+<details><summary>type: string</summary>
 
 #### `shouldString(value: any, error?: string | object): void`
 #### `shouldStringNotEmpty(value: string, error?: string | object): void`
 #### `shouldHexString(value: string, error?: string | object): void`
+  
+</details>
+
+<details><summary>type: other</summary>
+  
 #### `shouldBoolean(value: any, error?: string | object): void`
 #### `shouldBuffer(value: any, error?: string | object): void`
 #### `shouldError(value: any, error?: string | object): void`
+  
+</details>
 
+<details><summary>os: Windows</summary>
+  
 #### `shouldWindows(error?: string | object): void`
 #### `shouldWindowsX86(error?: string | object): void`
 
@@ -374,6 +444,10 @@ alias: `shouldWin64(error?: string | object): void`
 #### `shouldWin10(error?: string | object): void`
 #### `shouldWin8(error?: string | object): void`
 #### `shouldWin7(error?: string | object): void`
+  
+</details>
+
+<details><summary>os: Linux</summary>
 
 #### `shouldLinux(error?: string | object): void`
 #### `shouldArch(error?: string | object): Promise<void>`
@@ -404,7 +478,9 @@ alias: `shouldRaspbian(error?: string | object): Promise<void>`
 #### `shouldCinnamon(error?: string | object): void`
 
 #### `shouldWayland(error?: string | object): void`
-
+  
+</details>
+  
 ### opt
 
 _Return the given value when the condition is true otherwise null._<br/>
@@ -419,7 +495,9 @@ function(option = {}){
   };
 }
 ```
-
+  
+<details><summary>type: array</summary>
+  
 #### `asArray(value: any): any`
 #### `asArrayNotEmpty(value: any): any`
 #### `asArrayOfString(value: string[]): string[] | null`
@@ -446,7 +524,11 @@ function(option = {}){
 #### `asSizeArrayOfObjLike(value: any, length: number, schema: object): any`
 #### `asArrayOfBuffer(value: any): any`
 #### `asSizeArrayOfBuffer(value: any, length: number): any`
+  
+</details>
 
+<details><summary>type: number</summary>
+  
 #### `asBigInt(value: any): any`
 #### `asBigIntPositive(value: BigInt): BigInt | null`
 #### `asBigIntPositiveOrZero(value: BigInt): BigInt | null`
@@ -457,15 +539,30 @@ function(option = {}){
 #### `asIntegerWithinRange(value: number, min: number, max: number): number | null`
 #### `asNumber(value: number): number | null`
 #### `asNumberWithinRange(value: number, min: number, max: number): number | null`
-
+  
+</details>
+  
+<details><summary>type: object</summary>
+  
 #### `asObj(value: any): any`
 #### `asObjNotEmpty(value: any): any`
 #### `asObjWithProperties(value: any, prop: string[]): any`
 #### `asObjLike(value: any, schema: object): any`
+  
+</details>
 
+<details><summary>type: string</summary>
+  
 #### `asString(value: any): any`
 #### `asStringNotEmpty(value: string): string | null`
 #### `asHexString(value: string): string | null`
+  
+</details>
+  
+<details><summary>type: other</summary>
+
 #### `asBoolean(value: any): any`
 #### `asBuffer(value: any): any`
 #### `asError(value: any): any`
+  
+</details>
