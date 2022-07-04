@@ -401,7 +401,7 @@ t.equal(opt.asBoolean(undefined), null, "as boolean");
 t.end();
 });
 
-t.test('constructor', t => {
+t.test('error', t => {
 
 t.ok(check.isError(new Error()), "Error");
 t.ok(check.isError(new Error("")), "Error");
@@ -431,5 +431,15 @@ t.equal(opt.asError(() => {}), null, "Error");
 t.equal(opt.asError({}), null, "Error");
 t.equal(opt.asError(""), null, "Error");
 
+t.end();
+});
+
+t.test('RegExp', t => {
+
+  t.ok(check.isRegExp(/ab+c/i), "RegExp");
+  t.ok(check.isRegExp(new RegExp("ab+c", "i")), "RegExp");
+  t.ok(check.isRegExp(new RegExp(/ab+c/, "i")), "RegExp");
+  t.notOk(check.isRegExp("/^s/g"), "RegExp");
+  
 t.end();
 });

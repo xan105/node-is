@@ -35,6 +35,7 @@ export function shouldBoolean(value: any, error?: string | object): void;
 export function shouldBuffer(value: any, error?: string | object): void;
 
 export function shouldError(value: any, error?: string | object): void;
+export function shouldRegExp(value: any, error?: string | object): void;
 
 export function shouldInteger(value: number, error?: string | object): void;
 export function shouldIntegerPositive(value: number, error?: string | object): void;

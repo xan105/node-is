@@ -35,6 +35,7 @@ export function isBoolean(value: any): boolean;
 export function isBuffer(value: any): boolean;
 
 export function isError(value: any): boolean;
+export function isRegExp(value: any): boolean;
 
 export function isInteger(value: number): boolean;
 export function isIntegerPositive(value: number): boolean;
