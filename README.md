@@ -256,6 +256,7 @@ Note that `something: [function]` is invalid !
 #### `isBoolean(value: any): boolean`  
 #### `isBuffer(value: any): boolean`
 #### `isError(value: any): boolean`
+#### `isRegExp(value: any): boolean`
   
 </details>
 
@@ -426,6 +427,7 @@ assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }))
 #### `shouldBoolean(value: any, error?: string | object): void`
 #### `shouldBuffer(value: any, error?: string | object): void`
 #### `shouldError(value: any, error?: string | object): void`
+#### `shouldRegExp(value: any, error?: string | object): void`
   
 </details>
 
@@ -580,5 +582,6 @@ function(option = {}){
 #### `asBoolean(value: any): any`
 #### `asBuffer(value: any): any`
 #### `asError(value: any): any`
+#### `asRegExp(value: any): any`
   
 </details>
