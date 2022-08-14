@@ -26,9 +26,9 @@ export function shouldArrayOfBuffer(value: any, error?: string | object): void;
 export function shouldSizeArrayOfBuffer(value: any, length: number, error?: string | object): void;
 
 export function shouldBigInt(value: any, error?: string | object): void;
-export function shouldBigIntPositive(value: BigInt, error?: string | object): void;
-export function shouldBigIntPositiveOrZero(value: BigInt, error?: string | object): void;
-export function shouldBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt, error?: string | object): void;
+export function shouldBigIntPositive(value: bigint, error?: string | object): void;
+export function shouldBigIntPositiveOrZero(value: bigint, error?: string | object): void;
+export function shouldBigIntWithinRange(value: bigint, min: bigint, max: bigint, error?: string | object): void;
   
 export function shouldBoolean(value: any, error?: string | object): void;  
   

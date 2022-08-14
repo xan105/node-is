@@ -26,9 +26,9 @@ export function isArrayOfBuffer(value: any): boolean;
 export function isSizeArrayOfBuffer(value: any, length: number): boolean;
 
 export function isBigInt(value: any): boolean;
-export function isBigIntPositive(value: BigInt): boolean;
-export function isBigIntPositiveOrZero(value: BigInt): boolean;
-export function isBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt): boolean;
+export function isBigIntPositive(value: bigint): boolean;
+export function isBigIntPositiveOrZero(value: bigint): boolean;
+export function isBigIntWithinRange(value: bigint, min: bigint, max: bigint): boolean;
   
 export function isBoolean(value: any): boolean;  
   

@@ -109,6 +109,8 @@ Install
 npm install @xan105/is
 ```
 
+📦 Scoped `@xan105` packages are for my own personal use but feel free to use them.
+
 API
 ===
 

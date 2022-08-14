@@ -26,9 +26,9 @@ export function asArrayOfBuffer(value: any): any;
 export function asSizeArrayOfBuffer(value: any, length: number): any;
 
 export function asBigInt(value: any): any;
-export function asBigIntPositive(value: BigInt): BigInt | null;
-export function asBigIntPositiveOrZero(value: BigInt): BigInt | null;
-export function asBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt): BigInt | null;
+export function asBigIntPositive(value: bigint): bigint | null;
+export function asBigIntPositiveOrZero(value: bigint): bigint | null;
+export function asBigIntWithinRange(value: bigint, min: bigint, max: bigint): bigint | null;
   
 export function asBoolean(value: any): any;  
   
