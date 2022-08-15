@@ -1,6 +1,6 @@
 {
   "name": "@xan105/is",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "Collection of various 'is ... ?' checks",
   "type": "module",
   "exports": {
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "lint": "npx eslint \"./lib/**/*.{js,mjs}\" \"./types/**/*.d.ts\"",
-    "test": "tap \"test/**/*.js\" --no-coverage --no-coverage-report"
+    "test": "tap \"./test/**/*.js\" --no-coverage --no-coverage-report"
   },
   "keywords": [
     "is",
@@ -66,6 +66,6 @@
     "tap": "^16.3.0"
   },
   "dependencies": {
-    "@xan105/error": "^1.4.0"
+    "@xan105/error": "^1.4.1"
   }
 }
