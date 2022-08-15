@@ -148,59 +148,59 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 
 <details><summary>type: array</summary>
 
-#### `isArray(value: any): boolean`
-#### `isArrayNotEmpty(value: any): boolean`
-#### `isArrayOfString(value: string[]): boolean`
-#### `isSizeArrayOfString(value: string[], length: number): boolean`
-#### `isArrayOfStringNotEmpty(value: string[]): boolean`
-#### `isSizeArrayOfStringNotEmpty(value: string[], length: number): boolean`
-#### `isArrayOfNumber(value: number[]): boolean`
-#### `isSizeArrayOfNumber(value: number[], length: number): boolean`
-#### `isArrayOfNumberWithinRange(value: number[], min: number, max: number): boolean`
-#### `isSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number): boolean`
-#### `isArrayOfInteger(value: number[]): boolean`
-#### `isSizeArrayOfInteger(value: number[], length: number): boolean`
-#### `isArrayOfIntegerPositive(value: number[]): boolean`
-#### `isSizeArrayOfIntegerPositive(value: number[], length: number): boolean`
-#### `isArrayOfIntegerPositiveOrZero(value: number[]): boolean`
-#### `isSizeArrayOfIntegerPositiveOrZero(value: number[], length: number): boolean`
-#### `isArrayOfIntegerWithinRange(value: number[], min: number, max: number): boolean`
-#### `isSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number): boolean`
-#### `isArrayOfObj(value: any): boolean`
-#### `isSizeArrayOfObj(value: any, length: number): boolean`
-#### `isArrayOfObjWithProperties(value: any, prop: string[]): boolean`
-#### `isSizeArrayOfObjWithProperties(value: any, length: number, prop: string[]): boolean`
-#### `isArrayOfObjLike(value: any, schema: object): boolean`
-#### `isSizeArrayOfObjLike(value: any, length: number, schema: object): boolean`
-#### `isArrayOfBuffer(value: any): boolean`
-#### `isSizeArrayOfBuffer(value: any, length: number): boolean`
+#### `isArray(value: unknown): boolean`
+#### `isArrayNotEmpty(value: unknown): boolean`
+#### `isArrayOfString(value: unknown): boolean`
+#### `isSizeArrayOfString(value: unknown, length: number): boolean`
+#### `isArrayOfStringNotEmpty(value: unknown): boolean`
+#### `isSizeArrayOfStringNotEmpty(value: unknown, length: number): boolean`
+#### `isArrayOfNumber(value: unknown): boolean`
+#### `isSizeArrayOfNumber(value: unknown, length: number): boolean`
+#### `isArrayOfNumberWithinRange(value: unknown, min: number, max: number): boolean`
+#### `isSizeArrayOfNumberWithinRange(value: unknown, length: number, min: number, max: number): boolean`
+#### `isArrayOfInteger(value: unknown): boolean`
+#### `isSizeArrayOfInteger(value: unknown, length: number): boolean`
+#### `isArrayOfIntegerPositive(value: unknown): boolean`
+#### `isSizeArrayOfIntegerPositive(value: unknown, length: number): boolean`
+#### `isArrayOfIntegerPositiveOrZero(value: unknown): boolean`
+#### `isSizeArrayOfIntegerPositiveOrZero(value: unknown, length: number): boolean`
+#### `isArrayOfIntegerWithinRange(value: unknown, min: number, max: number): boolean`
+#### `isSizeArrayOfIntegerWithinRange(value: unknown, length: number, min: number, max: number): boolean`
+#### `isArrayOfObj(value: unknown): boolean`
+#### `isSizeArrayOfObj(value: unknown, length: number): boolean`
+#### `isArrayOfObjWithProperties(value: unknown, prop: string[]): boolean`
+#### `isSizeArrayOfObjWithProperties(value: unknown, length: number, prop: string[]): boolean`
+#### `isArrayOfObjLike(value: unknown, schema: object): boolean`
+#### `isSizeArrayOfObjLike(value: unknown, length: number, schema: object): boolean`
+#### `isArrayOfBuffer(value: unknown): boolean`
+#### `isSizeArrayOfBuffer(value: unknown, length: number): boolean`
   
 </details>  
 
 <details><summary>type: number</summary>
   
-#### `isBigInt(value: any): boolean`
-#### `isBigIntPositive(value: BigInt): boolean`
-#### `isBigIntPositiveOrZero(value: BigInt): boolean`
-#### `isBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt): boolean`
-#### `isInteger(value: number): boolean`
-#### `isIntegerPositive(value: number): boolean`
-#### `isIntegerPositiveOrZero(value: number): boolean`
-#### `isIntegerWithinRange(value: number, min: number, max: number): boolean`
-#### `isNumber(value: number): boolean`
-#### `isNumberWithinRange(value: number, min: number, max: number): boolean`
+#### `isBigInt(value: unknown): boolean`
+#### `isBigIntPositive(value: unknown): boolean`
+#### `isBigIntPositiveOrZero(value: unknown): boolean`
+#### `isBigIntWithinRange(value: unknown, min: bigint, max: bigint): boolean`
+#### `isInteger(value: unknown): boolean`
+#### `isIntegerPositive(value: unknown): boolean`
+#### `isIntegerPositiveOrZero(value: unknown): boolean`
+#### `isIntegerWithinRange(value: unknown, min: number, max: number): boolean`
+#### `isNumber(value: unknown): boolean`
+#### `isNumberWithinRange(value: unknown, min: number, max: number): boolean`
   
 </details>
 
 <details><summary>type: object</summary>
 
-#### `isObj(value: any): boolean`
+#### `isObj(value: unknown): boolean`
 
 as in a "plain obj" and not a JS obj so {}, new Object() and Object.create(null).
 
-#### `isObjNotEmpty(value: any): boolean`
-#### `isObjWithProperties(value: any, prop: string[]): boolean`
-#### `isObjLike(value: any, schema: object): boolean`
+#### `isObjNotEmpty(value: unknown): boolean`
+#### `isObjWithProperties(value: unknown, prop: string[]): boolean`
+#### `isObjLike(value: unknown, schema: object): boolean`
 
 Check if an obj is like the specified schema.<br/>
 Where schema is an obj containing a set of required property name and its corresponding _check_ function.<br/>
@@ -247,18 +247,18 @@ Note that `something: [function]` is invalid !
 
 <details><summary>type: string</summary>
   
-#### `isString(value: any): boolean`
-#### `isStringNotEmpty(value: string): boolean`
-#### `isHexString(value: string): boolean`
+#### `isString(value: unknown): boolean`
+#### `isStringNotEmpty(value: unknown): boolean`
+#### `isHexString(value: unknown): boolean`
   
 </details>
 
 <details><summary>type: other</summary>
   
-#### `isBoolean(value: any): boolean`  
-#### `isBuffer(value: any): boolean`
-#### `isError(value: any): boolean`
-#### `isRegExp(value: any): boolean`
+#### `isBoolean(value: unknown): boolean`  
+#### `isBuffer(value: unknown): boolean`
+#### `isError(value: unknown): boolean`
+#### `isRegExp(value: unknown): boolean`
   
 </details>
 
@@ -350,154 +350,154 @@ assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }))
   
 <details><summary>binary</summary>
   
-#### `should64bit (filePath: string, error?: string | object): Promise<void>`
-#### `should32bit (filePath: string, error?: string | object): Promise<void>`
-#### `shouldPNG(filePath: string, error?: string | object): Promise<void>`
-#### `shouldJPG(filePath: string, error?: string | object): Promise<void>`
-#### `shouldICO(filePath: string, error?: string | object): Promise<void>`
-#### `shouldGIF(filePath: string, error?: string | object): Promise<void>`
-#### `shouldWEBP(filePath: string, error?: string | object): Promise<void>`
-#### `shouldQOI(filePath: string, error?: string | object): Promise<void>`
+#### `should64bit (filePath: string, error?: Error | string): Promise<void>`
+#### `should32bit (filePath: string, error?: Error | string): Promise<void>`
+#### `shouldPNG(filePath: string, error?: Error | string): Promise<void>`
+#### `shouldJPG(filePath: string, error?: Error | string): Promise<void>`
+#### `shouldICO(filePath: string, error?: Error | string): Promise<void>`
+#### `shouldGIF(filePath: string, error?: Error | string): Promise<void>`
+#### `shouldWEBP(filePath: string, error?: Error | string): Promise<void>`
+#### `shouldQOI(filePath: string, error?: Error | string): Promise<void>`
   
 </details>
 
 <details><summary>type: array</summary>
   
-#### `shouldArray(value: any, error?: string | object): void`
-#### `shouldArrayNotEmpty(value: any, error?: string | object): void`
-#### `shouldArrayOfString(value: string[], error?: string | object): void`
-#### `shouldSizeArrayOfString(value: string[], length: number, error?: string | object): void`
-#### `shouldArrayOfStringNotEmpty(value: string[], error?: string | object): void`
-#### `shouldSizeArrayOfStringNotEmpty(value: string[], length: number, error?: string | object): void`
-#### `shouldArrayOfNumber(value: number[], error?: string | object): void`
-#### `shouldSizeArrayOfNumber(value: number[], length: number, error?: string | object): void`
-#### `shouldArrayOfNumberWithinRange(value: number[], min: number, max: number, error?: string | object): void`
-#### `shouldSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number, error?: string | object): void`
-#### `shouldArrayOfInteger(value: number[], error?: string | object): void`
-#### `shouldSizeArrayOfInteger(value: number[], length: number, error?: string | object): void`
-#### `shouldArrayOfIntegerPositive(value: number[], error?: string | object): void`
-#### `shouldSizeArrayOfIntegerPositive(value: number[], length: number, error?: string | object): void`
-#### `shouldArrayOfIntegerPositiveOrZero(value: number[], error?: string | object): void`
-#### `shouldSizeArrayOfIntegerPositiveOrZero(value: number[], length: number, error?: string | object): void`
-#### `shouldArrayOfIntegerWithinRange(value: number[], min: number, max: number, error?: string | object): void`
-#### `shouldSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number, error?: string | object): void`
-#### `shouldArrayOfObj(value: any, error?: string | object): void`
-#### `shouldSizeArrayOfObj(value: any, length: number, error?: string | object): void`
-#### `shouldArrayOfObjWithProperties(value: any, prop: string[], error?: string | object): void`
-#### `shouldSizeArrayOfObjWithProperties(value: any, length: number, prop: string[], error?: string | object): void`
-#### `shouldArrayOfObjLike(value: any, schema: object): void`
-#### `shouldSizeArrayOfObjLike(value: any, length: number, schema: object): void`
-#### `shouldArrayOfBuffer(value: any, error?: string | object): void`
-#### `shouldSizeArrayOfBuffer(value: any, length: number, error?: string | object): void`
+#### `shouldArray(value: unknown, error?: Error | string): void`
+#### `shouldArrayNotEmpty(value: unknown, error?: Error | string): void`
+#### `shouldArrayOfString(value: unknown, error?: Error | string): void`
+#### `shouldSizeArrayOfString(value: unknown, length: number, error?: Error | string): void`
+#### `shouldArrayOfStringNotEmpty(value: unknown, error?: Error | string): void`
+#### `shouldSizeArrayOfStringNotEmpty(value: unknown, length: number, error?: Error | string): void`
+#### `shouldArrayOfNumber(value: unknown, error?: Error | string): void`
+#### `shouldSizeArrayOfNumber(value: unknown, length: number, error?: Error | string): void`
+#### `shouldArrayOfNumberWithinRange(value: unknown, min: number, max: number, error?: Error | string): void`
+#### `shouldSizeArrayOfNumberWithinRange(value: unknown, length: number, min: number, max: number, error?: Error | string): void`
+#### `shouldArrayOfInteger(value: unknown, error?: Error | string): void`
+#### `shouldSizeArrayOfInteger(value: unknown, length: number, error?: Error | string): void`
+#### `shouldArrayOfIntegerPositive(value: unknown, error?: Error | string): void`
+#### `shouldSizeArrayOfIntegerPositive(value: unknown, length: number, error?: Error | string): void`
+#### `shouldArrayOfIntegerPositiveOrZero(value: unknown, error?: Error | string): void`
+#### `shouldSizeArrayOfIntegerPositiveOrZero(value: unknown, length: number, error?: Error | string): void`
+#### `shouldArrayOfIntegerWithinRange(value: unknown, min: number, max: number, error?: Error | string): void`
+#### `shouldSizeArrayOfIntegerWithinRange(value: unknown, length: number, min: number, max: number, error?: Error | string): void`
+#### `shouldArrayOfObj(value: unknown, error?: Error | string): void`
+#### `shouldSizeArrayOfObj(value: unknown, length: number, error?: Error | string): void`
+#### `shouldArrayOfObjWithProperties(value: unknown, prop: string[], error?: Error | string): void`
+#### `shouldSizeArrayOfObjWithProperties(value: unknown, length: number, prop: string[], error?: Error | string): void`
+#### `shouldArrayOfObjLike(value: unknown, schema: object, error?: Error | string): void`
+#### `shouldSizeArrayOfObjLike(value: unknown, length: number, schema: object, error?: Error | string): void`
+#### `shouldArrayOfBuffer(value: unknown, error?: Error | string): void`
+#### `shouldSizeArrayOfBuffer(value: unknown, length: number, error?: Error | string): void`
   
 </details>
  
 <details><summary>type: number</summary>
 
-#### `shouldBigInt(value: any, error?: string | object): void`
-#### `shouldBigIntPositive(value: BigInt, error?: string | object): void`
-#### `shouldBigIntPositiveOrZero(value: BigInt, error?: string | object): void`
-#### `shouldBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt, error?: string | object): void`
-#### `shouldInteger(value: number, error?: string | object): void`
-#### `shouldIntegerPositive(value: number, error?: string | object): void`
-#### `shouldIntegerPositiveOrZero(value: number, error?: string | object): void`
-#### `shouldIntegerWithinRange(value: number, min: number, max: number, error?: string | object): void`
-#### `shouldNumber(value: number, error?: string | object): void`
-#### `shouldNumberWithinRange(value: number, min: number, max: number, error?: string | object): void`
+#### `shouldBigInt(value: unknown, error?: Error | string): void`
+#### `shouldBigIntPositive(value: unknown, error?: Error | string): void`
+#### `shouldBigIntPositiveOrZero(value: unknown, error?: Error | string): void`
+#### `shouldBigIntWithinRange(value: unknown, min: bigint, max: bigint, error?: Error | string): void`
+#### `shouldInteger(value: unknown, error?: Error | string): void`
+#### `shouldIntegerPositive(value: unknown, error?: Error | string): void`
+#### `shouldIntegerPositiveOrZero(value: unknown, error?: Error | string): void`
+#### `shouldIntegerWithinRange(value: unknown, min: number, max: number, error?: Error | string): void`
+#### `shouldNumber(value: unknown, error?: Error | string): void`
+#### `shouldNumberWithinRange(value: unknown, min: number, max: number, error?: Error | string): void`
   
 </details>
 
 <details><summary>type: object</summary>
 
-#### `shouldObj(value: any, error?: string | object): void`
-#### `shouldObjNotEmpty(value: any, error?: string | object): void`
-#### `shouldObjWithProperties(value: any, prop: string[], error?: string | object): void`
-#### `shouldObjLike(value: any, schema: object): void`
+#### `shouldObj(value: unknown, error?: Error | string): void`
+#### `shouldObjNotEmpty(value: unknown, error?: Error | string): void`
+#### `shouldObjWithProperties(value: unknown, prop: string[], error?: Error | string): void`
+#### `shouldObjLike(value: unknown, schema: object, error?: Error | string): void`
   
 </details>
 
 <details><summary>type: string</summary>
 
-#### `shouldString(value: any, error?: string | object): void`
-#### `shouldStringNotEmpty(value: string, error?: string | object): void`
-#### `shouldHexString(value: string, error?: string | object): void`
+#### `shouldString(value: unknown, error?: Error | string): void`
+#### `shouldStringNotEmpty(value: unknown, error?: Error | string): void`
+#### `shouldHexString(value: unknown, error?: Error | string): void`
   
 </details>
 
 <details><summary>type: other</summary>
   
-#### `shouldBoolean(value: any, error?: string | object): void`
-#### `shouldBuffer(value: any, error?: string | object): void`
-#### `shouldError(value: any, error?: string | object): void`
-#### `shouldRegExp(value: any, error?: string | object): void`
+#### `shouldBoolean(value: unknown, error?: Error | string): void`
+#### `shouldBuffer(value: unknown, error?: Error | string): void`
+#### `shouldError(value: unknown, error?: Error | string): void`
+#### `shouldRegExp(value: unknown, error?: Error | string): void`
   
 </details>
 
 <details><summary>os: Windows</summary>
   
-#### `shouldWindows(error?: string | object): void`
-#### `shouldWindowsX86(error?: string | object): void`
+#### `shouldWindows(error?: Error | string): void`
+#### `shouldWindowsX86(error?: Error | string): void`
 
-alias: `shouldWin32(error?: string | object): void`
+alias: `shouldWin32(error?: Error | string): void`
 
-#### `shouldWindowsX64(error?: string | object): void`
+#### `shouldWindowsX64(error?: Error | string): void`
 
-alias: `shouldWin64(error?: string | object): void`
+alias: `shouldWin64(error?: Error | string): void`
 
-#### `shouldWin11orGreater(error?: string | object): void`
-#### `shouldWin10orGreater(error?: string | object): void`
-#### `shouldWin8orGreater(error?: string | object): void`
-#### `shouldWin7orGreater(error?: string | object): void`
-#### `shouldWin11orLesser(error?: string | object): void`
-#### `shouldWin10orLesser(error?: string | object): void`
-#### `shouldWin8orLesser(error?: string | object): void`
-#### `shouldWin7orLesser(error?: string | object): void`
-#### `shouldWin11(error?: string | object): void`
-#### `shouldWin10(error?: string | object): void`
-#### `shouldWin8(error?: string | object): void`
-#### `shouldWin7(error?: string | object): void`
+#### `shouldWin11orGreater(error?: Error | string): void`
+#### `shouldWin10orGreater(error?: Error | string): void`
+#### `shouldWin8orGreater(error?: Error | string): void`
+#### `shouldWin7orGreater(error?: Error | string): void`
+#### `shouldWin11orLesser(error?: Error | string): void`
+#### `shouldWin10orLesser(error?: Error | string): void`
+#### `shouldWin8orLesser(error?: Error | string): void`
+#### `shouldWin7orLesser(error?: Error | string): void`
+#### `shouldWin11(error?: Error | string): void`
+#### `shouldWin10(error?: Error | string): void`
+#### `shouldWin8(error?: Error | string): void`
+#### `shouldWin7(error?: Error | string): void`
   
 </details>
 
 <details><summary>os: Linux</summary>
 
-#### `shouldLinux(error?: string | object): void`
-#### `shouldArch(error?: string | object): Promise<void>`
-#### `shouldArchLike(error?: string | object): Promise<void>`
-#### `shouldManjaro(error?: string | object): Promise<void>`
-#### `shouldDebian(error?: string | object): Promise<void>`
-#### `shouldDebianLike(error?: string | object): Promise<void>`
-#### `shouldUbuntu(error?: string | object): Promise<void>`
-#### `shouldUbuntuLike(error?: string | object): Promise<void>`
-#### `shouldMint(error?: string | object): Promise<void>`
-#### `shouldPopOS(error?: string | object): Promise<void>`
-#### `shouldElementaryOS(error?: string | object): Promise<void>`
-#### `shouldDeepin(error?: string | object): Promise<void>`
-#### `shouldRaspberryPiOS(error?: string | object): Promise<void>`
+#### `shouldLinux(error?: Error | string): void`
+#### `shouldArch(error?: Error | string): Promise<void>`
+#### `shouldArchLike(error?: Error | string): Promise<void>`
+#### `shouldManjaro(error?: Error | string): Promise<void>`
+#### `shouldDebian(error?: Error | string): Promise<void>`
+#### `shouldDebianLike(error?: Error | string): Promise<void>`
+#### `shouldUbuntu(error?: Error | string): Promise<void>`
+#### `shouldUbuntuLike(error?: Error | string): Promise<void>`
+#### `shouldMint(error?: Error | string): Promise<void>`
+#### `shouldPopOS(error?: Error | string): Promise<void>`
+#### `shouldElementaryOS(error?: Error | string): Promise<void>`
+#### `shouldDeepin(error?: Error | string): Promise<void>`
+#### `shouldRaspberryPiOS(error?: Error | string): Promise<void>`
 
-alias: `shouldRaspbian(error?: string | object): Promise<void>`
+alias: `shouldRaspbian(error?: Error | string): Promise<void>`
 
-#### `shouldFedora(error?: string | object): Promise<void>`
-#### `shouldFedoraLike(error?: string | object): Promise<void>`
-#### `shouldOpenSUSE(error?: string | object): Promise<void>`
-#### `shouldSlackware(error?: string | object): Promise<void>`
-#### `shouldGentoo(error?: string | object): Promise<void>`
+#### `shouldFedora(error?: Error | string): Promise<void>`
+#### `shouldFedoraLike(error?: Error | string): Promise<void>`
+#### `shouldOpenSUSE(error?: Error | string): Promise<void>`
+#### `shouldSlackware(error?: Error | string): Promise<void>`
+#### `shouldGentoo(error?: Error | string): Promise<void>`
 
-#### `shouldGnome(error?: string | object): void`
-#### `shouldKDE(error?: string | object): void`
-#### `shouldXFCE(error?: string | object): void`
-#### `shouldMate(error?: string | object): void`
-#### `shouldCinnamon(error?: string | object): void`
+#### `shouldGnome(error?: Error | string): void`
+#### `shouldKDE(error?: Error | string): void`
+#### `shouldXFCE(error?: Error | string): void`
+#### `shouldMate(error?: Error | string): void`
+#### `shouldCinnamon(error?: Error | string): void`
 
-#### `shouldWayland(error?: string | object): void`
+#### `shouldWayland(error?: Error | string): void`
   
 </details>
   
 <details><summary>misc</summary>
 
-#### `shouldIP(value: string, error?: string | object): void`
-#### `shouldIPv4(value: string, error?: string | object): void`
-#### `shouldIPv6(value: string, error?: string | object): void`
+#### `shouldIP(value: string, error?: Error | string): void`
+#### `shouldIPv4(value: string, error?: Error | string): void`
+#### `shouldIPv6(value: string, error?: Error | string): void`
   
 </details>
   
@@ -518,72 +518,72 @@ function(option = {}){
   
 <details><summary>type: array</summary>
   
-#### `asArray(value: any): any`
-#### `asArrayNotEmpty(value: any): any`
-#### `asArrayOfString(value: string[]): string[] | null`
-#### `asSizeArrayOfString(value: string[], length: number): string[] | null`
-#### `asArrayOfStringNotEmpty(value: string[]): string[] | null`
-#### `asSizeArrayOfStringNotEmpty(value: string[], length: number): string[] | null`
-#### `asArrayOfNumber(value: number[]): number[] | null`
-#### `asSizeArrayOfNumber(value: number[], length: number): number[] | null`
-#### `asArrayOfNumberWithinRange(value: number[], min: number, max: number): number[] | null`
-#### `asSizeArrayOfNumberWithinRange(value: number[], length: number, min: number, max: number): number[] | null`
-#### `asArrayOfInteger(value: number[]): number[] | null`
-#### `asSizeArrayOfInteger(value: number[], length: number): number[] | null`
-#### `asArrayOfIntegerPositive(value: number[]): number[] | null`
-#### `asSizeArrayOfIntegerPositive(value: number[], length: number): number[] | null`
-#### `asArrayOfIntegerPositiveOrZero(value: number[]): number[] | null`
-#### `asSizeArrayOfIntegerPositiveOrZero(value: number[], length: number): number[] | null`
-#### `asArrayOfIntegerWithinRange(value: number[], min: number, max: number): number[] | null`
-#### `asSizeArrayOfIntegerWithinRange(value: number[], length: number, min: number, max: number): number[] | null`
-#### `asArrayOfObj(value: any): any`
-#### `asSizeArrayOfObj(value: any, length: number): any`
-#### `asArrayOfObjWithProperties(value: any, prop: string[]): any`
-#### `asSizeArrayOfObjWithProperties(value: any, length: number, prop: string[]): any`
-#### `asArrayOfObjLike(value: any, schema: object): any`
-#### `asSizeArrayOfObjLike(value: any, length: number, schema: object): any`
-#### `asArrayOfBuffer(value: any): any`
-#### `asSizeArrayOfBuffer(value: any, length: number): any`
+#### `asArray(value: unknown): [] | null`
+#### `asArrayNotEmpty(value: unknown): [] | null`
+#### `asArrayOfString(value: unknown): string[] | null`
+#### `asSizeArrayOfString(value: unknown, length: number): string[] | null`
+#### `asArrayOfStringNotEmpty(value: unknown): string[] | null`
+#### `asSizeArrayOfStringNotEmpty(value: unknown, length: number): string[] | null`
+#### `asArrayOfNumber(value: unknown): number[] | null`
+#### `asSizeArrayOfNumber(value: unknown, length: number): number[] | null`
+#### `asArrayOfNumberWithinRange(value: unknown, min: number, max: number): number[] | null`
+#### `asSizeArrayOfNumberWithinRange(value: unknown, length: number, min: number, max: number): number[] | null`
+#### `asArrayOfInteger(value: unknown): number[] | null`
+#### `asSizeArrayOfInteger(value: unknown, length: number): number[] | null`
+#### `asArrayOfIntegerPositive(value: unknown): number[] | null`
+#### `asSizeArrayOfIntegerPositive(value: unknown, length: number): number[] | null`
+#### `asArrayOfIntegerPositiveOrZero(value: unknown): number[] | null`
+#### `asSizeArrayOfIntegerPositiveOrZero(value: unknown, length: number): number[] | null`
+#### `asArrayOfIntegerWithinRange(value: unknown, min: number, max: number): number[] | null`
+#### `asSizeArrayOfIntegerWithinRange(value: unknown, length: number, min: number, max: number): number[] | null`
+#### `asArrayOfObj(value: unknown): object[] | null`
+#### `asSizeArrayOfObj(value: unknown, length: number): object[] | null`
+#### `asArrayOfObjWithProperties(value: unknown, prop: string[]): object[] | null`
+#### `asSizeArrayOfObjWithProperties(value: unknown, length: number, prop: string[]): object[] | null`
+#### `asArrayOfObjLike(value: unknown, schema: object): object[] | null`
+#### `asSizeArrayOfObjLike(value: unknown, length: number, schema: object): object[] | null`
+#### `asArrayOfBuffer(value: unknown): Buffer[] | null`
+#### `asSizeArrayOfBuffer(value: unknown, length: number): Buffer[] | null`
   
 </details>
 
 <details><summary>type: number</summary>
   
-#### `asBigInt(value: any): any`
-#### `asBigIntPositive(value: BigInt): BigInt | null`
-#### `asBigIntPositiveOrZero(value: BigInt): BigInt | null`
-#### `asBigIntWithinRange(value: BigInt, min: BigInt, max: BigInt): BigInt | null`
-#### `asInteger(value: number): number | null`
-#### `asIntegerPositive(value: number): number | null`
-#### `asIntegerPositiveOrZero(value: number): number | null`
-#### `asIntegerWithinRange(value: number, min: number, max: number): number | null`
-#### `asNumber(value: number): number | null`
-#### `asNumberWithinRange(value: number, min: number, max: number): number | null`
+#### `asBigInt(value: unknown): bigint | null`
+#### `asBigIntPositive(value: unknown): bigint | null`
+#### `asBigIntPositiveOrZero(value: unknown): bigint | null`
+#### `asBigIntWithinRange(value: unknown, min: bigint, max: bigint): bigint | null`
+#### `asInteger(value: unknown): number | null`
+#### `asIntegerPositive(value: unknown): number | null`
+#### `asIntegerPositiveOrZero(value: unknown): number | null`
+#### `asIntegerWithinRange(value: unknown, min: number, max: number): number | null`
+#### `asNumber(value: unknown): number | null`
+#### `asNumberWithinRange(value: unknown, min: number, max: number): number | null`
   
 </details>
   
 <details><summary>type: object</summary>
   
-#### `asObj(value: any): any`
-#### `asObjNotEmpty(value: any): any`
-#### `asObjWithProperties(value: any, prop: string[]): any`
-#### `asObjLike(value: any, schema: object): any`
+#### `asObj(value: unknown): object | null`
+#### `asObjNotEmpty(value: unknown): object | null`
+#### `asObjWithProperties(value: unknown, prop: string[]): object | null`
+#### `asObjLike(value: unknown, schema: object): object | null`
   
 </details>
 
 <details><summary>type: string</summary>
   
-#### `asString(value: any): any`
-#### `asStringNotEmpty(value: string): string | null`
-#### `asHexString(value: string): string | null`
+#### `asString(value: unknown): string | null`
+#### `asStringNotEmpty(value: unknown): string | null`
+#### `asHexString(value: unknown): string | null`
   
 </details>
   
 <details><summary>type: other</summary>
 
-#### `asBoolean(value: any): any`
-#### `asBuffer(value: any): any`
-#### `asError(value: any): any`
-#### `asRegExp(value: any): any`
+#### `asBoolean(value: unknown): boolean | null`
+#### `asBuffer(value: unknown): Buffer | null`
+#### `asError(value: unknown): Error | null`
+#### `asRegExp(value: unknown): RegExp | null`
   
 </details>

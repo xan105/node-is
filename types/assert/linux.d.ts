@@ -1,27 +1,27 @@
-export function shouldLinux(error?: string | object): void;
-export function shouldArch(error?: string | object): Promise<void>;
-export function shouldArchLike(error?: string | object): Promise<void>;
-export function shouldManjaro(error?: string | object): Promise<void>;
-export function shouldDebian(error?: string | object): Promise<void>;
-export function shouldDebianLike(error?: string | object): Promise<void>;
-export function shouldUbuntu(error?: string | object): Promise<void>;
-export function shouldUbuntuLike(error?: string | object): Promise<void>;
-export function shouldMint(error?: string | object): Promise<void>;
-export function shouldPopOS(error?: string | object): Promise<void>;
-export function shouldElementaryOS(error?: string | object): Promise<void>;
-export function shouldDeepin(error?: string | object): Promise<void>;
-export function shouldRaspberryPiOS(error?: string | object): Promise<void>;
-export function shouldRaspbian(error?: string | object): Promise<void>; //alias
-export function shouldFedora(error?: string | object): Promise<void>;
-export function shouldFedoraLike(error?: string | object): Promise<void>;
-export function shouldOpenSUSE(error?: string | object): Promise<void>;
-export function shouldSlackware(error?: string | object): Promise<void>;
-export function shouldGentoo(error?: string | object): Promise<void>;
+export function shouldLinux(error?: Error | string): void;
+export function shouldArch(error?: Error | string): Promise<void>;
+export function shouldArchLike(error?: Error | string): Promise<void>;
+export function shouldManjaro(error?: Error | string): Promise<void>;
+export function shouldDebian(error?: Error | string): Promise<void>;
+export function shouldDebianLike(error?: Error | string): Promise<void>;
+export function shouldUbuntu(error?: Error | string): Promise<void>;
+export function shouldUbuntuLike(error?: Error | string): Promise<void>;
+export function shouldMint(error?: Error | string): Promise<void>;
+export function shouldPopOS(error?: Error | string): Promise<void>;
+export function shouldElementaryOS(error?: Error | string): Promise<void>;
+export function shouldDeepin(error?: Error | string): Promise<void>;
+export function shouldRaspberryPiOS(error?: Error | string): Promise<void>;
+export function shouldRaspbian(error?: Error | string): Promise<void>; //alias
+export function shouldFedora(error?: Error | string): Promise<void>;
+export function shouldFedoraLike(error?: Error | string): Promise<void>;
+export function shouldOpenSUSE(error?: Error | string): Promise<void>;
+export function shouldSlackware(error?: Error | string): Promise<void>;
+export function shouldGentoo(error?: Error | string): Promise<void>;
 
-export function shouldGnome(error?: string | object): void;
-export function shouldKDE(error?: string | object): void;
-export function shouldXFCE(error?: string | object): void;
-export function shouldMate(error?: string | object): void;
-export function shouldCinnamon(error?: string | object): void;
+export function shouldGnome(error?: Error | string): void;
+export function shouldKDE(error?: Error | string): void;
+export function shouldXFCE(error?: Error | string): void;
+export function shouldMate(error?: Error | string): void;
+export function shouldCinnamon(error?: Error | string): void;
 
-export function shouldWayland(error?: string | object): void;
+export function shouldWayland(error?: Error | string): void;
