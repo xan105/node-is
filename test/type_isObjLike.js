@@ -17,7 +17,8 @@ t.ok(check.isObjLike({
   age: check.isNumber,
   child: {
     name: [ check.isStringNotEmpty, [] ],
-    age: [ check.isIntegerWithinRange, [0,100] ]
+    age: [ check.isIntegerWithinRange, [0,100] ],
+    height: [ check.isNumber, [], {optional: true}]
   }
 }),"isObjLike");
 
@@ -112,16 +113,6 @@ t.throws(function(){
     age: 26
   },{
     name: [check.isString],
-    age: check.isNumber,
-  });
-}, {code: "ERR_INVALID_ARG"} ,"bad usage");
-
-t.throws(function(){
-  check.isObjLike({
-    name: "Xan",
-    age: 26
-  },{
-    name: [check.isString, [], "3rd" ],
     age: check.isNumber,
   });
 }, {code: "ERR_INVALID_ARG"} ,"bad usage");

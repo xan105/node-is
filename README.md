@@ -242,6 +242,10 @@ The check funtion should be defined as follow: `something: [function, [args,...]
 If you don't have any args then an empty array: `something: [function, [] ]`<br/>
 Or you can pass the function as is (shortcut): `something: function`<br/>
 Note that `something: [function]` is invalid !
+
+💡 You can flag a property to be _optional_ by using `{optional: true}`.<br/>
+If the property is missing it will be skipped.<br/>
+eg: `something: [function, [], {optional: true}]`
   
 </details>
 
