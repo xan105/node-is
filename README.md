@@ -1,7 +1,7 @@
 About
 =====
 
-Collection of various 'is ... ?' checks.
+Collection of various 'is... ?' checks for asserting types and values at runtime.
 
 Example
 =======
@@ -171,6 +171,10 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 #### `isArrayOfObjWithProperties(value: unknown, prop: string[]): boolean`
 #### `isSizeArrayOfObjWithProperties(value: unknown, length: number, prop: string[]): boolean`
 #### `isArrayOfObjLike(value: unknown, schema: object): boolean`
+#### `isArrayOfSomeObjLike(value: unknown, schema: object): boolean`
+
+Same as `isArrayOfObjLike()` but at least **one element** in the array must pass the test instead of **all**
+
 #### `isSizeArrayOfObjLike(value: unknown, length: number, schema: object): boolean`
 #### `isArrayOfBuffer(value: unknown): boolean`
 #### `isSizeArrayOfBuffer(value: unknown, length: number): boolean`
@@ -337,7 +341,7 @@ alias: `isRaspbian(): Promise<boolean>`
 ### assert
 
 _Perform the same checks as above but throw an error instead._<br/>
-_This replace the cumbersome if(...) throw ..._
+_This replace the cumbersome and often repetitive "if(unexpected) throw Error" pattern_.
 
 💡 Every assertion has an optional `error` parameter to override the default Error.<br/>
 You can either use
@@ -390,6 +394,7 @@ assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }))
 #### `shouldArrayOfObjWithProperties(value: unknown, prop: string[], error?: Error | string): void`
 #### `shouldSizeArrayOfObjWithProperties(value: unknown, length: number, prop: string[], error?: Error | string): void`
 #### `shouldArrayOfObjLike(value: unknown, schema: object, error?: Error | string): void`
+#### `shouldArrayOfSomeObjLike(value: unknown, schema: object, error?: Error | string): void`
 #### `shouldSizeArrayOfObjLike(value: unknown, length: number, schema: object, error?: Error | string): void`
 #### `shouldArrayOfBuffer(value: unknown, error?: Error | string): void`
 #### `shouldSizeArrayOfBuffer(value: unknown, length: number, error?: Error | string): void`
@@ -545,6 +550,11 @@ function(option = {}){
 #### `asArrayOfObjWithProperties(value: unknown, prop: string[]): object[] | null`
 #### `asSizeArrayOfObjWithProperties(value: unknown, length: number, prop: string[]): object[] | null`
 #### `asArrayOfObjLike(value: unknown, schema: object): object[] | null`
+#### `asArrayOfSomeObjLike(value: unknown, schema: object): object[] | null`
+
+This will return every element matching the given schema.<br />
+Unlike `asArrayOfObjLike` which return the array only if all elements pass the test.
+
 #### `asSizeArrayOfObjLike(value: unknown, length: number, schema: object): object[] | null`
 #### `asArrayOfBuffer(value: unknown): Buffer[] | null`
 #### `asSizeArrayOfBuffer(value: unknown, length: number): Buffer[] | null`

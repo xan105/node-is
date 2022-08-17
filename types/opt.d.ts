@@ -21,6 +21,7 @@ export function asSizeArrayOfObj(value: unknown, length: number): object[] | nul
 export function asArrayOfObjWithProperties(value: unknown, prop: string[]): object[] | null;
 export function asSizeArrayOfObjWithProperties(value: unknown, length: number, prop: string[]): object[] | null;
 export function asArrayOfObjLike(value: unknown, schema: object): object[] | null;
+export function asArrayOfSomeObjLike(value: unknown, schema: object): object[] | null;
 export function asSizeArrayOfObjLike(value: unknown, length: number, schema: object): object[] | null;
 export function asArrayOfBuffer(value: unknown): Buffer[] | null;
 export function asSizeArrayOfBuffer(value: unknown, length: number): Buffer[] | null;

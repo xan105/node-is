@@ -21,6 +21,7 @@ export function isSizeArrayOfObj(value: unknown, length: number): boolean;
 export function isArrayOfObjWithProperties(value: unknown, prop: string[]): boolean;
 export function isSizeArrayOfObjWithProperties(value: unknown, length: number, prop: string[]): boolean;
 export function isArrayOfObjLike(value: unknown, schema: object): boolean;
+export function isArrayOfSomeObjLike(value: unknown, schema: object): boolean;
 export function isSizeArrayOfObjLike(value: unknown, length: number, schema: object): boolean;
 export function isArrayOfBuffer(value: unknown): boolean;
 export function isSizeArrayOfBuffer(value: unknown, length: number): boolean;

@@ -21,6 +21,7 @@ export function shouldSizeArrayOfObj(value: unknown, length: number, error?: Err
 export function shouldArrayOfObjWithProperties(value: unknown, prop: string[], error?: Error | string): void;
 export function shouldSizeArrayOfObjWithProperties(value: unknown, length: number, prop: string[], error?: Error | string): void;
 export function shouldArrayOfObjLike(value: unknown, schema: object, error?: Error | string): void;
+export function shouldArrayOfSomeObjLike(value: unknown, schema: object, error?: Error | string): void;
 export function shouldSizeArrayOfObjLike(value: unknown, length: number, schema: object, error?: Error | string): void;
 export function shouldArrayOfBuffer(value: unknown, error?: Error | string): void;
 export function shouldSizeArrayOfBuffer(value: unknown, length: number, error?: Error | string): void;
