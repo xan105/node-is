@@ -3,6 +3,8 @@ About
 
 Collection of various 'is... ?' checks for asserting types and values at runtime.
 
+📦 Scoped `@xan105` packages are for my own personal use but feel free to use them.
+
 Example
 =======
 
@@ -102,14 +104,22 @@ function(option = {}){
 }
 ```
 
-Install
-=======
+Install / Runtime
+=================
+
+### 📦 Package manager
 
 ```
 npm install @xan105/is
 ```
 
-📦 Scoped `@xan105` packages are for my own personal use but feel free to use them.
+### 🌐 CDN / HTTPS Bundle
+
+```
+import ... from "https://esm.sh/@xan105/is"
+```
+
+Please see https://esm.sh/ for more details.
 
 API
 ===
@@ -335,6 +345,9 @@ alias: `isRaspbian(): Promise<boolean>`
 #### `isIP(value: string): boolean`
 #### `isIPv4(value: string): boolean`
 #### `isIPv6(value: string): boolean`
+#### `isDeno(): boolean`
+#### `isNode(): boolean`
+#### `isBrowser(): boolean`
   
 </details>
   
@@ -507,6 +520,9 @@ alias: `shouldRaspbian(error?: Error | string): Promise<void>`
 #### `shouldIP(value: string, error?: Error | string): void`
 #### `shouldIPv4(value: string, error?: Error | string): void`
 #### `shouldIPv6(value: string, error?: Error | string): void`
+#### `shouldDeno(error?: Error | string): boolean`
+#### `shouldNode(error?: Error | string): boolean`
+#### `shouldBrowser(error?: Error | string): boolean`
   
 </details>
   
