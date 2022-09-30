@@ -1,9 +1,15 @@
-export * from "./is/type.d.ts";
-export * from "./is/binary.d.ts";
-export * from "./is/image.d.ts";
-export * from "./is/windows.d.ts";
-export * from "./is/linux.d.ts";
-export * from "./is/ip.d.ts";
-
-export * as assert from "./assert.d.ts";
-export * as opt from "./opt.d.ts";
+export * from "./is/type/array.js";
+export * from "./is/type/bigint.js";
+export * from "./is/type/boolean.js";
+export * from "./is/type/buffer.js";
+export * from "./is/type/number.js";
+export * from "./is/type/obj.js";
+export * from "./is/type/string.js";
+export * from "./is/file/binary.js";
+export * from "./is/file/image.js";
+export * from "./is/os/windows.js";
+export * from "./is/os/linux.js";
+export * from "./is/misc/ip.js";
+export * from "./is/misc/runtime.js";
+export * as assert from "./assert.js";
+export * as opt from "./opt.js";

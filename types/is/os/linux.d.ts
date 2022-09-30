@@ -11,17 +11,15 @@ export function isPopOS(): Promise<boolean>;
 export function isElementaryOS(): Promise<boolean>;
 export function isDeepin(): Promise<boolean>;
 export function isRaspberryPiOS(): Promise<boolean>;
-export function isRaspbian(): Promise<boolean>; //alias
 export function isFedora(): Promise<boolean>;
 export function isFedoraLike(): Promise<boolean>;
 export function isOpenSUSE(): Promise<boolean>;
 export function isSlackware(): Promise<boolean>;
 export function isGentoo(): Promise<boolean>;
-
 export function isGnome(): boolean;
 export function isKDE(): boolean;
 export function isXFCE(): boolean;
 export function isMate(): boolean;
 export function isCinnamon(): boolean;
-
 export function isWayland(): boolean;
+export { isRaspberryPiOS as isRaspbian };
