@@ -1,6 +1,6 @@
 {
   "name": "@xan105/is",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "Collection of various 'is... ?' checks for asserting types and values at runtime",
   "type": "module",
   "exports": {
@@ -22,8 +22,10 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "lint": "npx eslint \"./lib/**/*.{js,mjs}\" \"./types/**/*.d.ts\"",
-    "test": "tap \"./test/**/*.js\" --no-coverage --no-coverage-report"
+    "lint": "eslint \"./lib/**/*.{js,mjs}\" \"./types/**/*.d.ts\"",
+    "test": "tap \"./test/**/*.js\" --no-coverage --no-coverage-report",
+    "check": "tsc --noemit --checkjs",
+    "declare": "tsc --declaration --emitDeclarationOnly --outDir \"./types\""
   },
   "keywords": [
     "is",
@@ -62,12 +64,14 @@
     }
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
-    "@typescript-eslint/parser": "^5.33.0",
+    "@types/node": "^18.7.23",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
     "eslint": "^8.22.0",
-    "tap": "^16.3.0"
+    "tap": "^16.3.0",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@xan105/error": "^1.4.2"
+    "@xan105/error": "^1.4.3"
   }
 }
