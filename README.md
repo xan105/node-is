@@ -113,6 +113,12 @@ Install / Runtime
 npm install @xan105/is
 ```
 
+<details><summary>Compatibility</summary>
+
+- Node ✔️
+
+</details>
+
 ### 🌐 CDN / HTTPS Bundle
 
 ```
