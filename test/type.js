@@ -249,6 +249,7 @@ t.ok(check.isObjWithProperties({foo: "bar", bar: "foo"}, ["foo", "bar"]), "isObj
 t.ok(check.isObjWithProperties({foo: "bar", bar: "foo"}, ["foo"]), "isObjWithProperties()");
 t.throws(function(){ check.isObjWithProperties({foo: "bar"}, "foo") }, "isObjWithProperties()");
 t.notOk(check.isObjWithProperties({foo: "bar"}, ["bar"]), "isObjWithProperties()");
+t.ok(check.isObjWithinObj({foo: {bar: "foo"}, bar: {foo: "bar"}}), "isObjWithinObj()");
 
 //assert
 t.doesNotThrow(function(){ assert.shouldObj({}) }, "shouldObj()");
@@ -274,6 +275,7 @@ t.doesNotThrow(function(){ assert.shouldObjWithProperties({foo: "bar", bar: "foo
 t.doesNotThrow(function(){ assert.shouldObjWithProperties({foo: "bar", bar: "foo"}, ["foo"]) }, "shouldObjWithProperties()");
 t.throws(function(){ assert.shouldObjWithProperties({foo: "bar"}, "foo") }, "shouldObjWithProperties()");
 t.throws(function(){ assert.shouldObjWithProperties({foo: "bar"}, ["bar"]) }, "shouldObjWithProperties()");
+t.doesNotThrow(function(){ assert.shouldObjWithinObj({foo: {bar: "foo"}, bar: {foo: "bar"}}) }, "shouldObjWithinObj()");
 
 //as (fail only)
 
@@ -292,6 +294,7 @@ t.equal(opt.asObjNotEmpty(new Object()), null, "as plain empty obj");
 t.equal(opt.asObjNotEmpty(Object.create(null)), null, "as plain empty obj");
 t.throws(function(){ opt.asObjWithProperties({foo: "bar"}, "foo") }, null, "asObjWithProperties()");
 t.equal(opt.asObjWithProperties({foo: "bar"}, ["bar"]), null, "asObjWithProperties()");
+t.equal(opt.asObjWithinObj({foo: "bar"}), null, "asObjWithinObj()");
 
 t.end();
 });

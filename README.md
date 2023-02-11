@@ -266,6 +266,21 @@ Note that `something: [function]` is invalid !
 💡 You can flag a property to be _optional_ by using `{optional: true}`.<br/>
 If the property is missing it will be skipped.<br/>
 eg: `something: [function, [], {optional: true}]`
+
+#### `isObjWithinObj(value: unknown): boolean`
+
+Plain object assigned as property within another:
+
+```js
+{
+  foo: {
+    bar: "foo"
+  },
+  bar: {
+    foo: "bar"
+  }
+}
+```
   
 </details>
 
@@ -441,6 +456,7 @@ assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }))
 #### `shouldObjNotEmpty(value: unknown, error?: Error | string): void`
 #### `shouldObjWithProperties(value: unknown, prop: string[], error?: Error | string): void`
 #### `shouldObjLike(value: unknown, schema: object, error?: Error | string): void`
+#### `shouldObjWithinObj(value: unknown, error?: Error | string | null): void`
   
 </details>
 
@@ -604,6 +620,7 @@ Unlike `asArrayOfObjLike` which return the array only if all elements pass the t
 #### `asObjNotEmpty(value: unknown): object | null`
 #### `asObjWithProperties(value: unknown, prop: string[]): object | null`
 #### `asObjLike(value: unknown, schema: object): object | null`
+#### `asObjWithinObj(value: unknown): object | null`
   
 </details>
 
