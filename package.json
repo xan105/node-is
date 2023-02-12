@@ -1,6 +1,6 @@
 {
   "name": "@xan105/is",
-  "version": "2.7.1",
+  "version": "2.8.0",
   "description": "Collection of various 'is... ?' checks for asserting types and values at runtime",
   "type": "module",
   "exports": {
