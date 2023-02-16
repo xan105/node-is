@@ -1,7 +1,7 @@
 About
 =====
 
-Collection of various 'is... ?' checks for asserting types and values at runtime.
+Collection of various checks for asserting types and values at runtime.
 
 📦 Scoped `@xan105` packages are for my own personal use but feel free to use them.
 
