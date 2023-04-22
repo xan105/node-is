@@ -1,6 +1,6 @@
 {
   "name": "@xan105/is",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "description": "Collection of various checks for asserting types and values at runtime",
   "type": "module",
   "exports": {
@@ -64,14 +64,14 @@
     }
   ],
   "devDependencies": {
-    "@types/node": "^18.7.23",
-    "@typescript-eslint/eslint-plugin": "^5.38.1",
-    "@typescript-eslint/parser": "^5.38.1",
-    "eslint": "^8.34.0",
+    "@types/node": "^18.15.13",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint": "^8.39.0",
     "tap": "^16.3.4",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@xan105/error": "^1.6.0"
+    "@xan105/error": "^1.6.1"
   }
 }
