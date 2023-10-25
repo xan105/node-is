@@ -1,1 +1,0 @@
-export function asBuffer(value: unknown): Buffer | null;

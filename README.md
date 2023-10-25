@@ -171,6 +171,8 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 #### `isArrayOfStringNotEmpty(value: unknown): boolean`
 #### `isSizeArrayOfStringNotEmpty(value: unknown, length: number): boolean`
 #### `isArrayOfNumber(value: unknown): boolean`
+#### `isArrayOfStringLike(value: unknown, pattern: RegExp): boolean`
+#### `isSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp): boolean`
 #### `isSizeArrayOfNumber(value: unknown, length: number): boolean`
 #### `isArrayOfNumberWithinRange(value: unknown, min: number, max: number): boolean`
 #### `isSizeArrayOfNumberWithinRange(value: unknown, length: number, min: number, max: number): boolean`
@@ -192,9 +194,14 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 Same as `isArrayOfObjLike()` but at least **one element** in the array must pass the test instead of **all**
 
 #### `isSizeArrayOfObjLike(value: unknown, length: number, schema: object): boolean`
-#### `isArrayOfBuffer(value: unknown): boolean`
-#### `isSizeArrayOfBuffer(value: unknown, length: number): boolean`
-  
+#### `isArrayOfUint8Array(value: unknown): boolean`
+
+alias: `isArrayOfBuffer(value: unknown): boolean`
+
+#### `isSizeArrayOfUint8Array(value: unknown, length: number): boolean`
+
+alias: `isSizeArrayOfBuffer`
+
 </details>  
 
 <details><summary>type: number</summary>
@@ -288,6 +295,7 @@ Plain object assigned as property within another:
   
 #### `isString(value: unknown): boolean`
 #### `isStringNotEmpty(value: unknown): boolean`
+#### `isStringLike(value: unknown, pattern: RegExp): boolean`
 #### `isHexString(value: unknown): boolean`
   
 </details>
@@ -295,9 +303,14 @@ Plain object assigned as property within another:
 <details><summary>type: other</summary>
   
 #### `isBoolean(value: unknown): boolean`  
-#### `isBuffer(value: unknown): boolean`
+#### `isUint8Array(value: unknown): boolean`
+
+alias: `isBuffer(value: unknown): boolean`
+
 #### `isError(value: unknown): boolean`
 #### `isRegExp(value: unknown): boolean`
+#### `isPromise(value: unknown): boolean`
+#### `isFunction(value: unknown): boolean`
   
 </details>
 
@@ -411,6 +424,8 @@ assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }))
 #### `shouldSizeArrayOfString(value: unknown, length: number, error?: Error | string): void`
 #### `shouldArrayOfStringNotEmpty(value: unknown, error?: Error | string): void`
 #### `shouldSizeArrayOfStringNotEmpty(value: unknown, length: number, error?: Error | string): void`
+#### `shouldArrayOfStringLike(value: unknown, pattern: RegExp, error?: Error | string | null): void`
+#### `shouldSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp, error?: Error | string | null): void`
 #### `shouldArrayOfNumber(value: unknown, error?: Error | string): void`
 #### `shouldSizeArrayOfNumber(value: unknown, length: number, error?: Error | string): void`
 #### `shouldArrayOfNumberWithinRange(value: unknown, min: number, max: number, error?: Error | string): void`
@@ -430,8 +445,14 @@ assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }))
 #### `shouldArrayOfObjLike(value: unknown, schema: object, error?: Error | string): void`
 #### `shouldArrayOfSomeObjLike(value: unknown, schema: object, error?: Error | string): void`
 #### `shouldSizeArrayOfObjLike(value: unknown, length: number, schema: object, error?: Error | string): void`
-#### `shouldArrayOfBuffer(value: unknown, error?: Error | string): void`
-#### `shouldSizeArrayOfBuffer(value: unknown, length: number, error?: Error | string): void`
+
+#### `shouldArrayOfUint8Array(value: unknown, error?: Error | string): void`
+
+alias: `shouldArrayOfBuffer(value: unknown, error?: Error | string): void`
+
+#### `shouldSizeArrayOfUint8Array(value: unknown, length: number, error?: Error | string): void`
+
+alias: `shouldSizeArrayOfBuffer(value: unknown, length: number, error?: Error | string): void`
   
 </details>
  
@@ -464,6 +485,7 @@ assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }))
 
 #### `shouldString(value: unknown, error?: Error | string): void`
 #### `shouldStringNotEmpty(value: unknown, error?: Error | string): void`
+#### `shouldStringLike(value: unknown, pattern: RegExp, error?: Error | string | null): void`
 #### `shouldHexString(value: unknown, error?: Error | string): void`
   
 </details>
@@ -471,9 +493,14 @@ assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }))
 <details><summary>type: other</summary>
   
 #### `shouldBoolean(value: unknown, error?: Error | string): void`
-#### `shouldBuffer(value: unknown, error?: Error | string): void`
+#### `shouldUint8Array(value: unknown, error?: Error | string): void`
+
+alias: #### `shouldBuffer(value: unknown, error?: Error | string): void`
+
 #### `shouldError(value: unknown, error?: Error | string): void`
 #### `shouldRegExp(value: unknown, error?: Error | string): void`
+#### `shouldPromise(value: unknown, error?: Error | string | null): void`
+#### `shouldFunction(value: unknown, error?: Error | string | null): void`
   
 </details>
 
@@ -571,6 +598,8 @@ function(option = {}){
 #### `asSizeArrayOfString(value: unknown, length: number): string[] | null`
 #### `asArrayOfStringNotEmpty(value: unknown): string[] | null`
 #### `asSizeArrayOfStringNotEmpty(value: unknown, length: number): string[] | null`
+#### `asArrayOfStringLike(value: unknown, pattern: RegExp): string[] | null;
+#### `asSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp): string[] | null;
 #### `asArrayOfNumber(value: unknown): number[] | null`
 #### `asSizeArrayOfNumber(value: unknown, length: number): number[] | null`
 #### `asArrayOfNumberWithinRange(value: unknown, min: number, max: number): number[] | null`
@@ -594,8 +623,13 @@ This will return every element matching the given schema.<br />
 Unlike `asArrayOfObjLike` which return the array only if all elements pass the test.
 
 #### `asSizeArrayOfObjLike(value: unknown, length: number, schema: object): object[] | null`
-#### `asArrayOfBuffer(value: unknown): Buffer[] | null`
-#### `asSizeArrayOfBuffer(value: unknown, length: number): Buffer[] | null`
+#### `asArrayOfUint8Array(value: unknown): Uint8Array[] | Buffer[] | null`
+
+alias: `asArrayOfBuffer(value: unknown): Uint8Array[] | Buffer[] | null`
+
+#### `asSizeArrayOfUint8Array(value: unknown, length: number): Uint8Array[] | Buffer[] | null`
+
+alias: `asSizeArrayOfBuffer(value: unknown, length: number): Uint8Array[] | Buffer[] | null`
   
 </details>
 
@@ -635,8 +669,13 @@ Unlike `asArrayOfObjLike` which return the array only if all elements pass the t
 <details><summary>type: other</summary>
 
 #### `asBoolean(value: unknown): boolean | null`
-#### `asBuffer(value: unknown): Buffer | null`
+#### `asUint8Array(value: unknown): Uint8Array | Buffer | null`
+
+alias: `asBuffer(value: unknown): Uint8Array | Buffer | null`
+
 #### `asError(value: unknown): Error | null`
 #### `asRegExp(value: unknown): RegExp | null`
+#### `asPromise(value: unknown): Promise | null`
+#### `asFunction(value: unknown): any`
   
 </details>

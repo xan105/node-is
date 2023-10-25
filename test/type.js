@@ -244,6 +244,7 @@ t.notOk(check.isObjNotEmpty({}), "plain empty obj");
 t.notOk(check.isObjNotEmpty(new Object()), "plain empty obj");
 t.notOk(check.isObjNotEmpty(Object.create(null)), "plain empty obj");
 t.ok(check.isObjNotEmpty({foo: "bar"}), "plain empty obj");
+t.notOk(check.isObjNotEmpty({[Symbol("foo")]: "bar"}), "plain empty obj");
 
 t.ok(check.isObjWithProperties({foo: "bar", bar: "foo"}, ["foo", "bar"]), "isObjWithProperties()");
 t.ok(check.isObjWithProperties({foo: "bar", bar: "foo"}, ["foo"]), "isObjWithProperties()");

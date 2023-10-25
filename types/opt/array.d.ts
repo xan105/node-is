@@ -4,6 +4,8 @@ export function asArrayOfString(value: unknown): string[] | null;
 export function asSizeArrayOfString(value: unknown, length: number): string[] | null;
 export function asArrayOfStringNotEmpty(value: unknown): string[] | null;
 export function asSizeArrayOfStringNotEmpty(value: unknown, length: number): string[] | null;
+export function asArrayOfStringLike(value: unknown, pattern: RegExp): string[] | null;
+export function asSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp): string[] | null;
 export function asArrayOfNumber(value: unknown): number[] | null;
 export function asSizeArrayOfNumber(value: unknown, length: number): number[] | null;
 export function asArrayOfNumberWithinRange(value: unknown, min: number, max: number): number[] | null;
@@ -23,5 +25,7 @@ export function asSizeArrayOfObjWithProperties(value: unknown, length: number, p
 export function asArrayOfObjLike(value: unknown, schema: object): object[] | null;
 export function asArrayOfSomeObjLike(value: unknown, schema: object): object[] | null;
 export function asSizeArrayOfObjLike(value: unknown, length: number, schema: object): object[] | null;
-export function asArrayOfBuffer(value: unknown): Buffer[] | null;
-export function asSizeArrayOfBuffer(value: unknown, length: number): Buffer[] | null;
+export function asArrayOfUint8Array(value: unknown): Uint8Array[] | Buffer[] | null;
+export function asSizeArrayOfUint8Array(value: unknown, length: number): Uint8Array[] | Buffer[] | null;
+export function asArrayOfBuffer(value: unknown): Uint8Array[] | Buffer[] | null; //alias (backward compatibility)
+export function asSizeArrayOfBuffer(value: unknown, length: number): Uint8Array[] | Buffer[] | null; //alias (backward compatibility)

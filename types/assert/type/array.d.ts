@@ -4,6 +4,8 @@ export function shouldArrayOfString(value: unknown, error?: Error | string | nul
 export function shouldSizeArrayOfString(value: unknown, length: number, error?: Error | string | null): void;
 export function shouldArrayOfStringNotEmpty(value: unknown, error?: Error | string | null): void;
 export function shouldSizeArrayOfStringNotEmpty(value: unknown, length: number, error?: Error | string | null): void;
+export function shouldArrayOfStringLike(value: unknown, pattern: RegExp, error?: Error | string | null): void;
+export function shouldSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp, error?: Error | string | null): void;
 export function shouldArrayOfNumber(value: unknown, error?: Error | string | null): void;
 export function shouldSizeArrayOfNumber(value: unknown, length: number, error?: Error | string | null): void;
 export function shouldArrayOfNumberWithinRange(value: unknown, min: number, max: number, error?: Error | string | null): void;
@@ -23,5 +25,7 @@ export function shouldSizeArrayOfObjWithProperties(value: unknown, length: numbe
 export function shouldArrayOfObjLike(value: unknown, schema: object, error?: Error | string | null): void;
 export function shouldArrayOfSomeObjLike(value: unknown, schema: object, error?: Error | string | null): void;
 export function shouldSizeArrayOfObjLike(value: unknown, length: number, schema: object, error?: Error | string | null): void;
-export function shouldArrayOfBuffer(value: unknown, error?: Error | string | null): void;
-export function shouldSizeArrayOfBuffer(value: unknown, length: number, error?: Error | string | null): void;
+export function shouldArrayOfUint8Array(value: unknown, error?: Error | string | null): void;
+export function shouldSizeArrayOfUint8Array(value: unknown, length: number, error?: Error | string | null): void;
+export function shouldArrayOfBuffer(value: unknown, error?: Error | string | null): void; //alias (backward compatibility)
+export function shouldSizeArrayOfBuffer(value: unknown, length: number, error?: Error | string | null): void; //alias (backward compatibility)

@@ -4,6 +4,8 @@ export function isArrayOfString(value: unknown): boolean;
 export function isSizeArrayOfString(value: unknown, length: number): boolean;
 export function isArrayOfStringNotEmpty(value: unknown): boolean;
 export function isSizeArrayOfStringNotEmpty(value: unknown, length: number): boolean;
+export function isArrayOfStringLike(value: unknown, pattern: RegExp): boolean;
+export function isSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp): boolean;
 export function isArrayOfNumber(value: unknown): boolean;
 export function isSizeArrayOfNumber(value: unknown, length: number): boolean;
 export function isArrayOfNumberWithinRange(value: unknown, min: number, max: number): boolean;
@@ -23,5 +25,7 @@ export function isSizeArrayOfObjWithProperties(value: unknown, length: number, p
 export function isArrayOfObjLike(value: unknown, schema: object): boolean;
 export function isArrayOfSomeObjLike(value: unknown, schema: object): boolean;
 export function isSizeArrayOfObjLike(value: unknown, length: number, schema: object): boolean;
-export function isArrayOfBuffer(value: unknown): boolean;
-export function isSizeArrayOfBuffer(value: unknown, length: number): boolean;
+export function isArrayOfUint8Array(value: unknown): boolean;
+export function isSizeArrayOfUint8Array(value: unknown, length: number): boolean;
+export function isArrayOfBuffer(value: unknown): boolean; //alias (backward compatibility)
+export function isSizeArrayOfBuffer(value: unknown, length: number): boolean; //alias (backward compatibility)

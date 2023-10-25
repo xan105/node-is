@@ -1,7 +1,6 @@
 export * from "./assert/type/array.js";
 export * from "./assert/type/bigint.js";
 export * from "./assert/type/boolean.js";
-export * from "./assert/type/buffer.js";
 export * from "./assert/type/number.js";
 export * from "./assert/type/obj.js";
 export * from "./assert/type/string.js";
