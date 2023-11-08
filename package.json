@@ -1,6 +1,6 @@
 {
   "name": "@xan105/is",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "description": "Collection of various checks for asserting types and values at runtime",
   "type": "module",
   "exports": {
