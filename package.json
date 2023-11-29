@@ -1,6 +1,6 @@
 {
   "name": "@xan105/is",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "description": "Collection of various checks for asserting types and values at runtime",
   "type": "module",
   "exports": {
@@ -18,6 +18,10 @@
     }
   },
   "types": "./types/index.d.ts",
+  "files": [
+    "/lib",
+    "/types"
+  ],
   "engines": {
     "node": ">=16.0.0"
   },
