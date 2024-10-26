@@ -4,8 +4,8 @@ export function shouldArrayOfString(value: unknown, error?: Error | string | nul
 export function shouldSizeArrayOfString(value: unknown, length: number, error?: Error | string | null): void;
 export function shouldArrayOfStringNotEmpty(value: unknown, error?: Error | string | null): void;
 export function shouldSizeArrayOfStringNotEmpty(value: unknown, length: number, error?: Error | string | null): void;
-export function shouldArrayOfStringLike(value: unknown, pattern: RegExp, error?: Error | string | null): void;
-export function shouldSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp, error?: Error | string | null): void;
+export function shouldArrayOfStringLike(value: unknown, pattern: RegExp | string, error?: Error | string | null): void;
+export function shouldSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp | string, error?: Error | string | null): void;
 export function shouldArrayOfNumber(value: unknown, error?: Error | string | null): void;
 export function shouldSizeArrayOfNumber(value: unknown, length: number, error?: Error | string | null): void;
 export function shouldArrayOfNumberWithinRange(value: unknown, min: number, max: number, error?: Error | string | null): void;

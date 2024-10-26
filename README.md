@@ -171,8 +171,8 @@ Same as above but for a 32-bits (x86) Windows or Linux binary.
 #### `isArrayOfStringNotEmpty(value: unknown): boolean`
 #### `isSizeArrayOfStringNotEmpty(value: unknown, length: number): boolean`
 #### `isArrayOfNumber(value: unknown): boolean`
-#### `isArrayOfStringLike(value: unknown, pattern: RegExp): boolean`
-#### `isSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp): boolean`
+#### `isArrayOfStringLike(value: unknown, pattern: RegExp | string): boolean`
+#### `isSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp | string): boolean`
 #### `isSizeArrayOfNumber(value: unknown, length: number): boolean`
 #### `isArrayOfNumberWithinRange(value: unknown, min: number, max: number): boolean`
 #### `isSizeArrayOfNumberWithinRange(value: unknown, length: number, min: number, max: number): boolean`
@@ -295,7 +295,15 @@ Plain object assigned as property within another:
   
 #### `isString(value: unknown): boolean`
 #### `isStringNotEmpty(value: unknown): boolean`
-#### `isStringLike(value: unknown, pattern: RegExp): boolean`
+#### `isStringLike(value: unknown, pattern: RegExp | string): boolean`
+
+If pattern is a string, this function will look for a corresponding known regex pattern.
+
+As of this writing, these are:
+
+  - `hex`: Hexadecimal
+  - `SRI`: [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
+
 #### `isHexString(value: unknown): boolean`
   
 </details>
@@ -424,8 +432,8 @@ assert.shouldArrayOfString(["a","b"], new Error("custom error", { cause: err }))
 #### `shouldSizeArrayOfString(value: unknown, length: number, error?: Error | string): void`
 #### `shouldArrayOfStringNotEmpty(value: unknown, error?: Error | string): void`
 #### `shouldSizeArrayOfStringNotEmpty(value: unknown, length: number, error?: Error | string): void`
-#### `shouldArrayOfStringLike(value: unknown, pattern: RegExp, error?: Error | string | null): void`
-#### `shouldSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp, error?: Error | string | null): void`
+#### `shouldArrayOfStringLike(value: unknown, pattern: RegExp | string, error?: Error | string | null): void`
+#### `shouldSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp | string, error?: Error | string | null): void`
 #### `shouldArrayOfNumber(value: unknown, error?: Error | string): void`
 #### `shouldSizeArrayOfNumber(value: unknown, length: number, error?: Error | string): void`
 #### `shouldArrayOfNumberWithinRange(value: unknown, min: number, max: number, error?: Error | string): void`
@@ -485,7 +493,7 @@ alias: `shouldSizeArrayOfBuffer(value: unknown, length: number, error?: Error | 
 
 #### `shouldString(value: unknown, error?: Error | string): void`
 #### `shouldStringNotEmpty(value: unknown, error?: Error | string): void`
-#### `shouldStringLike(value: unknown, pattern: RegExp, error?: Error | string | null): void`
+#### `shouldStringLike(value: unknown, pattern: RegExp | string, error?: Error | string | null): void`
 #### `shouldHexString(value: unknown, error?: Error | string): void`
   
 </details>
@@ -598,8 +606,8 @@ function(option = {}){
 #### `asSizeArrayOfString(value: unknown, length: number): string[] | null`
 #### `asArrayOfStringNotEmpty(value: unknown): string[] | null`
 #### `asSizeArrayOfStringNotEmpty(value: unknown, length: number): string[] | null`
-#### `asArrayOfStringLike(value: unknown, pattern: RegExp): string[] | null;
-#### `asSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp): string[] | null;
+#### `asArrayOfStringLike(value: unknown, pattern: RegExp | string): string[] | null;
+#### `asSizeArrayOfStringLike(value: unknown, length: number, pattern: RegExp | string): string[] | null;
 #### `asArrayOfNumber(value: unknown): number[] | null`
 #### `asSizeArrayOfNumber(value: unknown, length: number): number[] | null`
 #### `asArrayOfNumberWithinRange(value: unknown, min: number, max: number): number[] | null`
@@ -662,6 +670,7 @@ alias: `asSizeArrayOfBuffer(value: unknown, length: number): Uint8Array[] | Buff
   
 #### `asString(value: unknown): string | null`
 #### `asStringNotEmpty(value: unknown): string | null`
+#### `asStringLike(value: unknown, pattern: RegExp | string): string | null`
 #### `asHexString(value: unknown): string | null`
   
 </details>

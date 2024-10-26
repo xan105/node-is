@@ -328,6 +328,8 @@ t.notOk(check.isHexString("aabb110h"), "is hex string");
 t.notOk(check.isHexString(" aabb "), "is hex string");
 t.notOk(check.isHexString("hhaabb"), "is hex string");
 
+t.ok(check.isStringLike("sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC", "SRI"), "is SRI string");
+
 //assert
 t.doesNotThrow(function(){ assert.shouldString("hello world") }, "shouldString()");
 t.doesNotThrow(function(){ assert.shouldString("") }, "shouldString()");
