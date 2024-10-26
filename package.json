@@ -28,8 +28,7 @@
   "scripts": {
     "lint": "eslint \"./lib/**/*.{js,mjs}\" \"./types/**/*.d.ts\"",
     "test": "tap \"./test/**/*.js\" --disable-coverage",
-    "check": "tsc --noemit --checkjs",
-    "declare": "tsc --declaration --emitDeclarationOnly --outDir \"./types\""
+    "declare": "tsc --emitDeclarationOnly"
   },
   "keywords": [
     "is",

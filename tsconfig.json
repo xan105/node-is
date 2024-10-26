@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
-    "module": "node16",
+    "module": "nodenext",
     "allowJs": true,
     "strict": true,
-    "noImplicitAny": false
+    "noImplicitAny": true,
+    "declaration": true,
+    "declarationDir": "./types"
   },
-  "exclude":[
-    "node_modules",
-    "test"
+  "include": [
+    "lib", 
+    "types"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
